@@ -1,0 +1,16 @@
+$default-font: "Roboto", sans-serif;
+$heading-font: 'Syne', sans-serif;
+$second-font: 'DM-Sans', sans-serif;
+$accent: #Eccf67;
+$text: #000000;
+$text-wh: #ffffff;
+$color-yellow: #FDB914;
+$color-dark: #202020;
+$color-red: #EB4B4D;
+$color-light: #E8EBF0;
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+$gutter: $grid-gutter-width;

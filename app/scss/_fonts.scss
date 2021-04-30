@@ -1,0 +1,14 @@
+@import "_mixins/font-face";
+
+
+@include font-face("Roboto", "../fonts/Roboto/Roboto-Regular");
+@include font-face("Roboto", "../fonts/Roboto/Roboto-Bold, bold");
+@include font-face("Roboto", "../fonts/Roboto/Roboto-Medium, medium");
+
+@include font-face("Syne", "../fonts/Syne/Syne-Bold, bold");
+@include font-face("Syne", "../fonts/Syne/Syne-Medium, medium");
+@include font-face("Syne", "../fonts/Syne/Syne-Regular");
+
+@include font-face("DM-Sans", "../fonts/DMSans/DMSans-Bold, bold");
+@include font-face("DM-Sans", "../fonts/DMSans/DMSans-Medium, medium");
+@include font-face("DM-Sans", "../fonts/DMSans/DMSans-Regular");
