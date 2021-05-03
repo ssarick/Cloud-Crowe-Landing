@@ -16,11 +16,13 @@
     <!-- Template Basic Images End -->
 
     <!-- Custom Browsers Color Start -->
-    <meta name="theme-color" content="#000" />
+    <meta name="theme-color" content="#E8EBF0" />
     <!-- Custom Browsers Color End -->
 
     <!-- Main Style -->
     <link rel="stylesheet" href="css/main.min.css" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="css/animate.css" />
 
 </head>
 
@@ -31,9 +33,10 @@
                 <source src="../img/Crowe Global Lobby Video.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="container d-flex header-content">
-            <div class="card blurred-back ">
-                HELLO WORLD
+        <div class="container d-flex flex-column header-content">
+            <p class="tip wow fadeIn " data-wow-duration="4s" data-wow-delay="0.5s">Scroll Down</p>
+            <div class="mouse wow fadeIn blurred-back" data-wow-duration="4s" data-wow-delay="0.5s">
+                <span></span>
             </div>
         </div>
     </header>
@@ -48,7 +51,7 @@
             <ul class="list col-4 d-flex">
                 <li class="list-btn"><a href="#header-page">About</a></li>
                 <li class="list-btn"><a href="#news">News</a></li>
-                <li class="list-btn"><a href="">Services</a></li>
+                <li class="list-btn"><a href="#service">Services</a></li>
                 <li class="list-btn"><a href="">Tutorials</a></li>
             </ul>
             <div class="col-4 log-reg d-flex">
@@ -58,90 +61,75 @@
         </div>
     </nav>
 
-    <section class="news" id="news">
+    <section class="news wow bounceInUp" data-wow-offset="100" id="news">
         <div class="container">
-            <!-- <div class="row d-flex news-page">
-                <div class="card info  active-card">
-                    <img class="info-icon" src="../img/ico.png" alt="ico">
-                    <h1 class="info-title"><span>20</span></h1>
-                    <p class="info-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                    </p>
-                    <div class="list">
-                        <a class="list-btn" href="#news">Read more</a>
-                    </div>
-                </div>
-                <div class="card info  active-card">
-                    <img class="info-icon" src="../img/ico.png" alt="ico">
-                    <h1 class="info-title"><span>274</span></h1>
-                    <p class="info-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit
-                    </p>
-                </div>
-            </div> -->
+            <h1 class="title wow slideInLeft"  data-wow-offset="100" data-wow-delay="0.5s">
+                News
+            </h1>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide d-flex ">
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a>
                             </div>
                         </div>
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a> 
+                                <p class="list-data">03.05.2021</p>
                             </div>
                         </div>
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a>
                             </div>
                         </div>
                     </div>
                     <div class="swiper-slide d-flex">
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a>
                             </div>
                         </div>
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a>
                             </div>
                         </div>
-                        <div class="card info active-card">
+                        <div class="card info active-card blurred-back">
                             <img class="info-icon" src="../img/ico.png" alt="ico">
                             <h1 class="info-title"><span>274</span></h1>
                             <p class="info-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit
                             </p>
                             <div class="list">
-                                <a class="list-btn" href="#news">Read more</a>
+                                <a class="btn btn-black" href="#news">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -149,14 +137,58 @@
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
                 <!-- Add Arrows -->
-                <div class="d-flex swiper-btn-group">
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
             </div>
         </div>
     </section>
 
+    <section class="service" id="service">
+        <h1 class="title wow slideInLeft" data-wow-offset="100">
+            Features
+        </h1>
+        <div class="container wrapper">
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">Free Enrollement</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">Fast and Easy Registration</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">24/7 customer support</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">Zero Commission</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">Free Enrollement</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+            <div class="service-card blurred-back">
+                <img src="./img/ico.png" alt="ico">
+                <h3 class="service-card-title">Free Enrollement</h3>
+                <p class="service-card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ratione.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <script src="js/scripts.min.js "></script>
 </body>
 

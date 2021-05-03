@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Syne-Bold';
+  src: url('Syne-Bold.eot');
+  src: url('Syne-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Syne-Bold.svg#Syne-Bold') format('svg'),
+       url('Syne-Bold.ttf') format('truetype'),
+       url('Syne-Bold.woff') format('woff'),
+       url('Syne-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

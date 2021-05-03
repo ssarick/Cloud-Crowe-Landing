@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Syne-Regular';
+  src: url('Syne-Regular.eot');
+  src: url('Syne-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Syne-Regular.svg#Syne-Regular') format('svg'),
+       url('Syne-Regular.ttf') format('truetype'),
+       url('Syne-Regular.woff') format('woff'),
+       url('Syne-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

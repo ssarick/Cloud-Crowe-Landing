@@ -1,6 +1,15 @@
-$default-font: "Roboto", sans-serif;
-$heading-font: 'Syne', sans-serif;
-$second-font: 'DM-Sans', sans-serif;
+$Roboto-reg: 'Roboto-Regular', sans-serif;
+$Roboto-med: 'Roboto-Medium', sans-serif;
+$Roboto-bold: 'Roboto-Bold', sans-serif;
+$Syne-reg: 'Syne-Regular', sans-serif;
+$Syne-med: 'Syne-Medium', sans-serif;
+$Syne-bold: 'Syne-Bold', sans-serif;
+$Dmsans-reg: 'DMSans-Regular', sans-serif;
+$Dmsans-bold: 'DMSans-Bold', sans-serif;
+$Dmsans-med: 'DMSans-Medium', sans-serif;
+
+
+
 $accent: #Eccf67;
 $text: #000000;
 $text-wh: #ffffff;
@@ -8,6 +17,8 @@ $color-yellow: #FDB914;
 $color-dark: #202020;
 $color-red: #EB4B4D;
 $color-light: #E8EBF0;
+
+
 // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 $grid-gutter-width: 30px;
 $grid-columns: 12;
