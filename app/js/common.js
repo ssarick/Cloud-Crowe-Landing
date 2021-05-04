@@ -15,20 +15,18 @@ window.onscroll = function () {
 var swiper = new Swiper(".swiper-container", {
   slidesPerView: 1,
   spaceBetween: 0,
-  speed: 1500,
+  speed: 1000,
   autoplay: {
-    dalay: 2000,
+    dalay: 1000,
     disableOnInteraction: true
   },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  }
 });
+
+
 (function() {
   // Add event listener
   document.addEventListener("mousemove", parallax);
