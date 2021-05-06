@@ -41,9 +41,13 @@
         </div>
         <div class="container hashtags">
             <ul class="d-flex justify-content-between">
-                <li class="wow pulse"  data-wow-iteration="100" data-wow-duration="2s"><span>#</span>Banking</li>
-                <li class="wow pulse"  data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.5s"><span>#</span>Finance</li>
-                <li class="wow pulse"  data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.9s"><span>#</span>Accounting</li>
+                <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s"><span>#</span>Banking</li>
+                <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.5s">
+                    <span>#</span>Finance
+                </li>
+                <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.9s">
+                    <span>#</span>Accounting
+                </li>
             </ul>
         </div>
     </header>
@@ -51,15 +55,19 @@
     <nav class="navbar" id="nav">
         <div class="container nav">
             <div class="col-4">
-                <a class="navbar-brand" href="#">
+                <!-- <a class="navbar-brand" href="#">
                     <img src="./img/Crowe Logo Black.svg" alt="Logo">
+                </a> -->
+                <a class="navbar-brand" href="#">
+                    <img class="wow flip" data-wow-delay="1s" src="./img/cloud.svg" alt="">
+                    <div>Crowe Cloud</div>
                 </a>
             </div>
             <ul class="list col-4 d-flex">
                 <li class="list-btn"><a href="#About">About</a></li>
                 <li class="list-btn"><a href="#service">Service</a></li>
                 <li class="list-btn"><a href="#news">News</a></li>
-                <li class="list-btn"><a href="">Contacts</a></li>
+                <li class="list-btn"><a href="#contacts">Contacts</a></li>
             </ul>
             <div class="col-4 log-reg d-flex">
                 <a href="#" class="btn btn-black col">Registration</a>
@@ -69,6 +77,9 @@
     </nav>
 
     <section class="whyme" id="About">
+        <h1 class="title wow slideInLeft" data-wow-offset="100">
+            About
+        </h1>
         <div class="container">
             <div class="whyme-wrapper blurred-back align-items-stretch">
                 <div class="col-4 wow bounceInLeft">
@@ -123,7 +134,7 @@
         </div>
     </section>
 
-    <section class="service" id="service">
+    <section class="service">
         <h1 class="title wow slideInLeft" data-wow-offset="100">
             Features
         </h1>
@@ -149,17 +160,197 @@
         </div>
     </section>
 
-    <section class="offers" id="offers">
+    <section class="offers" id="service">
+        <h1 class="title wow slideInLeft" data-wow-offset="100">
+            Tariff
+        </h1>
+
+        <!-- <div class="container">
+            <div class="offers-version blurred-back d-flex justify-content-between">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12  offers-version-list">
+                            <h3 class="text-center">Main</h3>
+                            <ul class="offers-version-block">
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">HR</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">Bank</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">MSFO</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">EFO</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12  offers-version-list">
+                            <h3 class="text-center">Main</h3>
+                            <ul class="offers-version-block">
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">HR</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">Bank</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">MSFO</p>
+                                </li>
+                                <li class="offers-version-block-items">
+                                    <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                                    <p class="offers-version-block-title">EFO</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-4">HElloworld</div>
+                <div class="col-4 offers-version-list">
+                    <ul class="offers-version-block">
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">HR</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">Bank</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">MSFO</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">EFO</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">1C</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">Consulting</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">Documentation</p>
+                        </li>
+                        <li class="offers-version-block-items">
+                            <img class="offers-version-block-img" src="./img/free-icon-calendar-1827424.png" alt="">
+                            <p class="offers-version-block-title">Storage</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+
         <div class="container">
-            <div class="offers-wrapper">
-                <div class="card blurred-back offers-card">
-                    helloworld
+            <div class="offers-wrapper" id="app">
+                <div class="offers-choice col-8 wow bounceInLeft">
+                    <div class="blurred-back offers-card">
+                        <div class="pseudo">
+                            <h3 class="offers-card-title">
+                                Craft your tariff yourself
+                            </h3>
+                        </div>
+                        <ul class="offers-card-list">
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>EDO</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>Banking</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>Reporting</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>Statistics</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>Storage</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>HR</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>MSFO</p>
+                            </li>
+                            <li class="offers-card-item-add">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                                <p>1C Integration</p>
+                            </li>
+                        </ul>
+                        <div class="range">
+                            <input type="range" min="1" max="100" value="1" class="rangeFacture" id="myRange" oninput="valueChanged(this)">
+                        </div>
+                    </div>
                 </div>
-                <div class="card blurred-back offers-card">
-                    helloworld
-                </div>
-                <div class="card blurred-back offers-card">
-                    helloworld
+                <div class="offers-block col-4 wow bounceInRight">
+                    <div class="blurred-back offers-card">
+                        <div class="pseudo">
+                            <h3 class="offers-card-title">
+                                Your Package
+                            </h3>
+                        </div>
+                        <ul class="offers-card-list">
+                            <li class="offers-card-item">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                            <li class="offers-card-item">Lorem ipsum dolor sit amet.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor.</li>
+                            <li class="offers-card-item">Lorem ipsum dolor sit.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor sit.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor.</li>
+                            <li class="offers-card-item">Lorem, ipsum dolor sit.</li>
+                        </ul>
+                        <div class="list">
+                            <a class="btn btn-red" href=""><img class="trash" src="./img/trash (1).svg" alt="">Delete all</a>
+                            <a class="btn btn-yellow" href=""><img class="listOr" src="./img/clipboard.svg" alt="">Order</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -251,6 +442,57 @@
             </div>
         </div>
     </section>
+
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer-map">
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A33846aa90811cb407f1c0b3e700b5836ed84a3346a0d6923346bbd2e5dbccd43&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>    
+            </div>
+            <div class="footer-wrapper">
+                <div class="col-3 d-flex flex-column justify-content-between">
+                    <div class="footer-logo">
+                        <!-- <img src="./img/Crowe Logo Black.svg" alt=""> -->
+                        <a class="navbar-brand" href="#">
+                            <img class="" src="./img/cloud.svg" alt="">
+                            <div class="txt-white">Crowe Cloud</div>
+                        </a>
+                    </div>
+                    <div class="socials">
+                        <ul class="socials-list">
+                            <li class="socials-item"><a href="#"><img src="./img/facebook.png" alt=""></a></li>
+                            <li class="socials-item"><a href="#"><img src="./img/linkedin.png" alt=""></a></li>
+                            <li class="socials-item"><a href="#"><img src="./img/telegram.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-text">
+                        © 2020 INVOICE EXPERT | All rights reserved.
+                    </div>
+                </div>
+                <div class="col-3 footer-list">
+                    <ul class="">
+                        <li class="footer-list-item"><a href="#">Home</a></li>
+                        <li class="footer-list-item"><a href="#">Login</a></li>
+                        <li class="footer-list-item"><a href="#About">About</a></li>
+                        <li class="footer-list-item"><a href="#service">Service</a></li>
+                        <li class="footer-list-item"><a href="#news">News</a></li>
+                        <li class="footer-list-item"><a href="#contacts">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 footer-adress">
+                    <ul>
+                        <li class="footer-adress-col">Tashkent, Mirabad district, 
+                            Afrosiab 4B. 
+                            <br> 
+                            Reference point: Metro Oybek
+                        </li>
+                        <li class="footer-adress-col"><a href="tel:+998909259737">+998 90 925 97 37</a></li>
+                        <li class="footer-adress-col"><a href="tel:+998977655770">+998 97 765 57 70</a></li>
+                        <li class="footer-adress-col"><a href="mailto:crowetacuz@gmail.com">crowetacuz@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/wow.min.js"></script>
     <script>

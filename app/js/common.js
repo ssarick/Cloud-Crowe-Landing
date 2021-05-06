@@ -46,3 +46,17 @@ var swiper = new Swiper(".swiper-container", {
   }
 
 })();
+
+
+var app = new Vue({
+  el: '#app',
+  data: {
+      
+  }
+})
+
+
+function valueChanged(e){
+	let a = e.value;
+	e.style.background = `linear-gradient(to right, #FDB914,#FDB914 ${a}%, #eee ${a}%)`;
+}

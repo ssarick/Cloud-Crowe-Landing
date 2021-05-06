@@ -157,17 +157,35 @@ strong {
 //.............................................................................
 .navbar {
   position: relative;
-  padding: 20px 0;
+  padding: 10px 0;
   backdrop-filter: contrast(1) blur(10px);
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
   z-index: 99999;
   position: fixed;
+  // max-height: 100px;
   top: 0;
   left: 0;
   right: 0;
   transition: 0.3s;
   img {
-    width: 150px;
+    // width: 150px;
+    width: 70px;
+    height: 100%;
+  }
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  div {
+    margin: 6px 0 0 16px;
+    font-family: $Dmsans-med;
+    font-size: 24px;
+    color: $text;
+    line-height: 1;
+  }
+  img {
+    width: 70px;
+    height: 100%;
   }
 }
 .nav-hide {
@@ -178,7 +196,9 @@ strong {
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
+  height: 100%;
+  align-content: center;
 }
 .log-reg {
   display: flex;
@@ -342,7 +362,7 @@ strong {
 .hashtags {
   text-align: right;
   font-family: $Syne-bold;
-  font-size: 14px;
+  font-size: 18px;
   color: $text;
   margin-top: -30px;
   ul {
@@ -548,26 +568,26 @@ strong {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: stretch;
-    .pseudo {
-      display: flex;
-      padding-bottom: 10px;
-      h3 {
-        display: inline-block;
-        position: relative;
-        &::before {
-          position: absolute;
-          content: "";
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: $color-yellow;
-        }
-      }
-    }
   }
 }
 
+.pseudo {
+  display: flex;
+  padding-bottom: 10px;
+  h3 {
+    display: inline-block;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: $color-yellow;
+    }
+  }
+}
 //............................................................................
 //....OOOOOOO.....FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSS.....
 //...OOOOOOOOOO...FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSS....
@@ -586,36 +606,435 @@ strong {
 .offers {
   position: relative;
   padding: 100px 0;
+  background: url("../img/alesia-kazantceva-XLm6-fPwK5Q-unsplash.jpg") no-repeat;
+  background-size: cover;
   &-wrapper {
+    display: flex;
+  }
+  &-card {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    
-    .card {
-      position: relative;
-      margin: 20px;
-      color: $text;
-      z-index: 150;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+    flex-direction: column;
+    margin: auto;
+    padding: 50px;
+    width: 100%;
+    border-radius: 30px;
+    color: $text;
+    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.5);
+    z-index: 6;
+    transition: 0.2s ease-in-out;
+    .list {
+      justify-content: space-between;
+    }
+    .btn {
+      margin: 15px 0 0 0;
+      min-width: 110px;
+      padding: 4px 16px;
+      font-weight: 400;
+      img.trash {
+        position: relative;
+        top: -2px;
+        width: 16px;
+        margin-right: 5px;
+        filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+          brightness(104%) contrast(97%);
+      }
+      img.listOr {
+        position: relative;
+        top: -2px;
+        width: 16px;
+        margin-right: 5px;
+        // filter: invert(51%) sepia(95%) saturate(385%) hue-rotate(57deg)
+        //   brightness(101%) contrast(89%);
+        filter: invert(100%);
+      }
+      &:hover img {
+        filter: invert(100%);
+      }
+    }
 
+    &-title {
+      // font-family: 'Gardens';
+      font-family: $Syne-bold;
+      line-height: 1.25;
+      font-size: 30px;
+      padding-bottom: 5px;
+    }
+    &-item {
+      cursor: pointer;
+      position: relative;
+      padding-left: 30px;
+      align-content: center;
+      align-items: center;
+      font-family: $Dmsans-med;
+      padding-bottom: 5px;
       &::before {
         position: absolute;
-        content: '';
-        top: 0;
+        content: "";
         left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 145;
-        width: 97%;
-        height: 90%;
-        margin: auto;
-        border-radius: 25px;
-        background-color: $color-yellow;
-        opacity: 0.7;
+        top: 5px;
+        background: url("../img/checked.svg");
+        // filter: invert(51%) sepia(95%) saturate(385%) hue-rotate(57deg)
+        // brightness(101%) contrast(89%);
+        filter: invert(68%) sepia(92%) saturate(587%) hue-rotate(347deg)
+          brightness(102%) contrast(98%);
+        background-size: contain;
+        width: 16px;
+        height: 16px;
       }
+    }
+    &-item-add {
+      cursor: pointer;
+      position: relative;
+      align-content: center;
+      align-items: center;
+      font-family: $Dmsans-med;
+      display: flex;
+      vertical-align: middle;
+      padding-bottom: 8px;
+    }
+  }
+  &-block {
+    justify-content: stretch;
+    position: relative;
+    width: 100%;
+  }
+}
+
+//...........................................................................................
+//....OOOOOOO.....FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSS..........222222....
+//...OOOOOOOOOO...FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSS........22222222...
+//..OOOOOOOOOOOO..FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...... 222..2222..
+//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS..SSSS...... 222..2222..
+//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS..................2222..
+//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR..SSSSSSS..............22222..
+//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR...SSSSSSSSS..........22222...
+//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRR........SSSSSSS.........22222....
+//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR.RRRR..........SSSSS.......22222.....
+//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR..RRRR..SSSS....SSSS......22222......
+//..OOOOOOOOOOOO..FFFF.......FFFF.......EEEEEEEEEEE.RRRR..RRRRR.SSSSSSSSSSSS......2222.......
+//...OOOOOOOOOO...FFFF.......FFFF.......EEEEEEEEEEE.RRRR...RRRRR.SSSSSSSSSS...... 222222222..
+//.....OOOOOO.....FFFF.......FFFF.......EEEEEEEEEEE.RRRR....RRRR..SSSSSSSS....... 222222222..
+//...........................................................................................
+
+.offers-version {
+  padding: 100px 0;
+  &-list {
+    padding: 10px;
+  }
+
+  &-block {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-items {
+      width: 100%;
+      max-width: 48%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      align-items: center;
+      padding: 20px 10px;
+
+      &:nth-child(odd) {
+        border-top: 1px solid $color-yellow;
+      }
+      &:nth-child(even) {
+        border-left: 1px solid $color-yellow;
+        border-top: 1px solid $color-yellow;
+      }
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-top: 1px solid transparent;
+      }
+    }
+
+    &-img {
+      max-width: 35px;
+    }
+
+    &-title {
+      margin-top: 10px;
+      font-family: $Dmsans-bold;
+      font-size: 16px;
     }
   }
 }
+
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+// SWITCHER
+
+.rangeFacture {
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0 3px;
+  height: 26px;
+  border-radius: 100px;
+  border: none;
+  background: $color-light;
+  outline: none;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  // box-shadow: 0 0 3px $color-yellow;
+}
+
+.rangeFacture::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: $text-wh;
+  cursor: pointer;
+}
+
+.rangeFacture::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: $color-light;
+  cursor: pointer;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-light;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 2px;
+  bottom: 2.3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: $color-yellow;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $color-yellow;
+}
+
+input:checked + .slider:before {
+  transform: translateX(21px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+//............................................................................
+//.FFFFFFFFFF...OOOOOOO.......OOOOOOO.....TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRR...
+//.FFFFFFFFFF..OOOOOOOOOO....OOOOOOOOOO...TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
+//.FFFFFFFFFF.OOOOOOOOOOOO..OOOOOOOOOOOO..TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
+//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR...RRRR..
+//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR...RRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
+//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRR.....
+//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR.RRRR....
+//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR..RRRR...
+//.FFFF.......OOOOOOOOOOOO..OOOOOOOOOOOO.....TTTT....EEEEEEEEEEE.RRRR..RRRRR..
+//.FFFF........OOOOOOOOOO....OOOOOOOOOO......TTTT....EEEEEEEEEEE.RRRR...RRRR..
+//.FFFF..........OOOOOO........OOOOOO........TTTT....EEEEEEEEEEE.RRRR....RRR..
+.footer {
+  font-family: $Dmsans-med;
+  padding: 60px 0;
+  position: relative;
+  display: flex;
+  background-color: $color-dark;
+  // background: url('../img/luca-bravo-SRjZtxsK3Os-unsplash.jpg') no-repeat;
+  background-size: cover;
+  color: $text-wh;
+  img {
+    filter: invert(1);
+  }
+  .txt-white{
+    color: #fff;
+  }  
+  &-logo {
+    max-width: 200px;
+  }
+  &-text {
+    color: $color-light;
+    font-size: 12px;
+  }
+  &-wrapper {
+    display: flex;
+  }
+  &-list {
+    border-left: 2px solid $color-yellow;
+    ul {
+      padding-left: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &-item {
+      transition: 0.3s;
+      padding-bottom: 8px;
+
+      &:hover {
+        transition: 0.3s;
+        transform: scale(1.01);
+      }
+      a {
+        color: $color-light;
+        transition: 0.3s;
+      }
+    }
+  }
+  &-adress {
+    border-left: 2px solid $color-yellow;
+    ul {
+      position: relative;
+      padding-left: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &-col {
+      position: relative;
+      transition: 0.3s;
+      margin-bottom: 15px;
+      padding-left: 50px;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 28px;
+        height: 28px;
+        filter: invert(82%) sepia(42%) saturate(2615%) hue-rotate(347deg)
+          brightness(101%) contrast(98%);
+        background-size: contain;
+      }
+
+      &:nth-child(1) {
+        &:hover {
+          transition: 0.3s;
+          transform: scale(1.01);
+        }
+        &::before {
+          background: url("../img/placeholder.png") no-repeat;
+          background-size: contain;
+        }
+      }
+      &:nth-child(2) {
+        &:hover {
+          a {
+            color: $color-yellow;
+          }
+          transition: 0.3s;
+          transform: scale(1.01);
+        }
+        &::before {
+          background: url("../img/phone-call.png") no-repeat;
+          background-size: contain;
+        }
+        background: url("../img/phone-call.png") no-repeat;
+        background-size: contain;
+      }
+      &:nth-child(3) {
+        &:hover {
+          a {
+            color: $color-yellow;
+          }
+          transition: 0.3s;
+          transform: scale(1.01);
+        }
+        &::before {
+          content: none;
+          background: url("../img/phone-call.png") no-repeat;
+          background-size: contain;
+        }
+      }
+      &:nth-child(4) {
+        &:hover {
+          a {
+            color: $color-yellow;
+          }
+          transition: 0.3s;
+          transform: scale(1.01);
+        }
+        &::before {
+          background: url("../img/gmail.png") no-repeat;
+          background-size: contain;
+        }
+      }
+
+      a {
+        color: $color-light;
+      }
+    }
+  }
+  &-map{
+    margin-bottom: 50px;
+    border-radius: 50%;
+    iframe{
+      border-radius: 20px;
+    }
+  }
+}
+.socials {
+  width: 100%;
+  margin: 20px 0;
+  &-list {
+    display: flex;
+    justify-content: flex-start;
+  }
+  &-item {
+    transition: 0.3s;
+    padding-right: 10px;
+    &:hover {
+      transition: 0.3s;
+      transform: scale(1.1);
+      filter: invert(33%) sepia(27%) saturate(1252%) hue-rotate(182deg)
+        brightness(91%) contrast(86%);
+    }
+    img {
+      max-width: 30px;
+    }
+  }
+}
+
 @import "media";
