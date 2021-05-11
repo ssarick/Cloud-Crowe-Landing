@@ -268,7 +268,7 @@ strong {
 .news {
   margin: 0 auto;
   background-color: $color-light;
-  padding: 100px 0;
+  padding: 50px 0;
   position: relative;
   color: $text;
   height: 100vh;
@@ -288,12 +288,13 @@ strong {
   background-position: bottom, right;
   background-size: 30%, 30%;
 }
+
 .title {
-  position: absolute;
-  left: 100px;
+  position: relative;
+  left: 0;
   top: 0;
   font-family: $Syne-bold;
-  padding: 20px;
+  line-height: 1;
   font-size: 90px;
   opacity: 0.5;
 }
@@ -364,7 +365,6 @@ strong {
   font-family: $Syne-bold;
   font-size: 18px;
   color: $text;
-  margin-top: -30px;
   ul {
     display: flex;
     justify-content: flex-end;
@@ -430,7 +430,6 @@ strong {
 
 .service {
   // background: url('../img/jan-canty-OsAjoj6JFK0-unsplash.jpg') no-repeat;
-  background-color: $color-light;
   background-color: $color-yellow;
   background-size: cover;
   margin: 0 auto;
@@ -534,7 +533,7 @@ strong {
 
 .whyme {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
   background: url("../img/john-unwin-ot93hAL2Tc4-unsplash.jpg") no-repeat;
   background-size: cover;
   &-title {
@@ -572,6 +571,7 @@ strong {
 }
 
 .pseudo {
+  position: relative;
   display: flex;
   padding-bottom: 10px;
   h3 {
@@ -605,7 +605,7 @@ strong {
 //............................................................................
 .offers {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
   background: url("../img/alesia-kazantceva-XLm6-fPwK5Q-unsplash.jpg") no-repeat;
   background-size: cover;
   &-wrapper {
@@ -623,7 +623,8 @@ strong {
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.5);
     z-index: 6;
     transition: 0.2s ease-in-out;
-    .list {
+    &-list {
+      padding: 10px 0;
       justify-content: space-between;
     }
     .btn {
@@ -651,6 +652,13 @@ strong {
       &:hover img {
         filter: invert(100%);
       }
+    }
+    &-price{
+      font-family: $Dmsans-med;
+      padding: 10px 0;
+      border-top: 3px solid $color-yellow;
+      border-bottom: 3px solid $color-yellow;
+
     }
 
     &-title {
@@ -700,6 +708,7 @@ strong {
     width: 100%;
   }
 }
+
 
 //...........................................................................................
 //....OOOOOOO.....FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSS..........222222....
