@@ -162,7 +162,6 @@ strong {
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
   z-index: 99999;
   position: fixed;
-  // max-height: 100px;
   top: 0;
   left: 0;
   right: 0;
@@ -171,6 +170,12 @@ strong {
     // width: 150px;
     width: 70px;
     height: 100%;
+  }
+  #burger{
+    display: flex;
+    .list{
+      display: flex;
+    }    
   }
 }
 .navbar-brand {
@@ -276,6 +281,9 @@ strong {
     padding: 100px 0 0 0;
     align-content: center;
     position: relative;
+  }
+  .swiper-for-mob{
+    display: none;
   }
 }
 #news {
@@ -399,6 +407,7 @@ strong {
 //..SSSSSSSSSS..LLLLLLLLLLLIIII.DDDDDDDDDD...EEEEEEEEEEE.RRRR...RRRRR..
 //...SSSSSSSS...LLLLLLLLLLLIIII.DDDDDDDDD....EEEEEEEEEEE.RRRR....RRRR..
 //.....................................................................
+
 .swiper-container {
   padding: 50px 0 0 0;
 }
@@ -542,8 +551,13 @@ strong {
     font-size: 30px;
   }
   &-text {
+    font-size: 14px;
     font-family: $Dmsans-reg;
-    word-break: keep-all;
+  }
+  .list{
+    a{
+      margin: 20px auto;
+    }
   }
 }
 .whyme-wrapper {
@@ -553,15 +567,10 @@ strong {
   border-radius: 30px;
   justify-content: space-between;
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
-  .title {
-    align-content: left;
-    font-size: 80px;
-  }
   .btn {
     margin: 20px 0;
     max-width: 100%;
   }
-
   .questions {
     display: flex;
     flex-wrap: wrap;
@@ -618,18 +627,51 @@ strong {
     margin: auto;
     padding: 50px;
     width: 100%;
+    height: 100%;
     border-radius: 30px;
     color: $text;
     box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.5);
     z-index: 6;
     transition: 0.2s ease-in-out;
     &-list {
+      position: relative;
       padding: 10px 0;
-      justify-content: space-between;
+      flex: 1 1 auto;
+    }
+
+    .active-list {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "(empty)";
+        text-align: center;
+        left: 0;
+        right: 0;
+        opacity: 0.5;
+      }
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      button {
+        width: 300px;
+        padding: 8px 16px;
+        cursor: pointer;
+        border: none;
+        color: $text-wh;
+        background-color: $color-yellow;
+        border: 2px solid $color-yellow;
+        &:hover {
+          transition: 0.2s ease-out;
+          transform: scale(1.05);
+        }
+      }
     }
     .btn {
       margin: 15px 0 0 0;
       min-width: 110px;
+      max-width: 100%;
       padding: 4px 16px;
       font-weight: 400;
       img.trash {
@@ -653,12 +695,13 @@ strong {
         filter: invert(100%);
       }
     }
-    &-price{
+    &-price {
       font-family: $Dmsans-med;
+      font-size: 18px;
       padding: 10px 0;
       border-top: 3px solid $color-yellow;
       border-bottom: 3px solid $color-yellow;
-
+      width: 100%;
     }
 
     &-title {
@@ -703,71 +746,9 @@ strong {
     }
   }
   &-block {
-    justify-content: stretch;
     position: relative;
     width: 100%;
-  }
-}
-
-
-//...........................................................................................
-//....OOOOOOO.....FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSS..........222222....
-//...OOOOOOOOOO...FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSS........22222222...
-//..OOOOOOOOOOOO..FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...... 222..2222..
-//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS..SSSS...... 222..2222..
-//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS..................2222..
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR..SSSSSSS..............22222..
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR...SSSSSSSSS..........22222...
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRR........SSSSSSS.........22222....
-//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR.RRRR..........SSSSS.......22222.....
-//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR..RRRR..SSSS....SSSS......22222......
-//..OOOOOOOOOOOO..FFFF.......FFFF.......EEEEEEEEEEE.RRRR..RRRRR.SSSSSSSSSSSS......2222.......
-//...OOOOOOOOOO...FFFF.......FFFF.......EEEEEEEEEEE.RRRR...RRRRR.SSSSSSSSSS...... 222222222..
-//.....OOOOOO.....FFFF.......FFFF.......EEEEEEEEEEE.RRRR....RRRR..SSSSSSSS....... 222222222..
-//...........................................................................................
-
-.offers-version {
-  padding: 100px 0;
-  &-list {
-    padding: 10px;
-  }
-
-  &-block {
-    display: flex;
-    flex-wrap: wrap;
-
-    &-items {
-      width: 100%;
-      max-width: 48%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-content: center;
-      align-items: center;
-      padding: 20px 10px;
-
-      &:nth-child(odd) {
-        border-top: 1px solid $color-yellow;
-      }
-      &:nth-child(even) {
-        border-left: 1px solid $color-yellow;
-        border-top: 1px solid $color-yellow;
-      }
-      &:nth-child(1),
-      &:nth-child(2) {
-        border-top: 1px solid transparent;
-      }
-    }
-
-    &-img {
-      max-width: 35px;
-    }
-
-    &-title {
-      margin-top: 10px;
-      font-family: $Dmsans-bold;
-      font-size: 16px;
-    }
+    flex-shrink: 1;
   }
 }
 
@@ -897,9 +878,9 @@ input:checked + .slider:before {
   img {
     filter: invert(1);
   }
-  .txt-white{
+  .txt-white {
     color: #fff;
-  }  
+  }
   &-logo {
     max-width: 200px;
   }
@@ -1016,10 +997,15 @@ input:checked + .slider:before {
       }
     }
   }
-  &-map{
+  &-copyright{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &-map {
     margin-bottom: 50px;
     border-radius: 50%;
-    iframe{
+    iframe {
       border-radius: 20px;
     }
   }

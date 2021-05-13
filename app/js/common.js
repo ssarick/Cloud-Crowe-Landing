@@ -1,3 +1,4 @@
+
 let initialScroll = window.pageYOffset;
 
 $(window).on("scroll", () => {
@@ -6,7 +7,10 @@ $(window).on("scroll", () => {
 
   if (initialScroll > currentScroll) {
     element.classList.remove("nav-hide");
-  } else {
+  } else if (element.classList.contains('activeB')) {
+    element.classList.remove("nav-hide");
+  }
+  else {
     element.classList.add("nav-hide");
   }
   initialScroll = currentScroll;
@@ -14,33 +18,49 @@ $(window).on("scroll", () => {
 
 const offers = [
   { id: 0, name: "EDO  ", desc: "EDO Desciption", price: 1 },
-  { id: 1, name: "Banking  ", desc: "Banking Desciption", price: 1 },
-  { id: 2, name: "Reporting  ", desc: "Reporting Desciption", price: 1 },
-  { id: 3, name: "Statistics  ", desc: "Statistics Desciption", price: 1 },
-  { id: 4, name: "Storage  ", desc: "Storage Desciption", price: 1 },
-  { id: 5, name: "HR  ", desc: "HR Desciption", price: 1 },
-  { id: 6, name: "MSFO  ", desc: "EDO Desciption", price: 1 },
-  { id: 7, name: "1C Integration  ", desc: "1C Integration Desciption", price: 1 }
+  { id: 1, name: "Banking  ", desc: "Banking Desciption", price: 2 },
+  { id: 2, name: "Reporting  ", desc: "Reporting Desciption", price: 3 },
+  { id: 3, name: "Statistics  ", desc: "Statistics Desciption", price: 4 },
+  { id: 4, name: "Storage  ", desc: "Storage Desciption", price: 5 },
+  { id: 5, name: "HR  ", desc: "HR Desciption", price: 6 },
+  { id: 6, name: "MSFO  ", desc: "EDO Desciption", price: 7 },
+  {
+    id: 7,
+    name: "1C Integration  ",
+    desc: "1C Integration Desciption",
+    price: 8,
+  },
 ];
-
-
-function sumStr(price){
-  let strArr = price.split(",");
-  let sum = strArr.reduce(function(total, num){
-    return parseFloat(total) + parseFloat(num);
-  });
-
-  return sum;
-}
-
-
 
 $(document).ready(() => {
   let tariffBlock = $("#targetElement");
   let packageBlock = $("#text");
-  let priceBlock = $("#price")
+  let priceBlock = $("#price");
 
+  function sum(input) {
+    let total = 0;
+    for (let i = 0; i < input.length; i++) {
+      if (isNaN(input[i])) {
+        continue;
+      }
+      total += Number(input[i]);
+    }
+    return total;
+  }
+
+  const priceAmount = [];
   const orderedArr = [];
+
+  function sum(input) {
+    let total = 0;
+    for (let i = 0; i < input.length; i++) {
+      if (isNaN(input[i])) {
+        continue;
+      }
+      total += Number(input[i]);
+    }
+    return total;
+  }
 
   for (let x = 0; x < offers.length; x++) {
     tariffBlock.append(`
@@ -53,32 +73,64 @@ $(document).ready(() => {
     </li>`);
   }
 
-  priceBlock.append(``)
-
-
-
   $(".offers-card-item-add input").on("click", function (e) {
+    // $("ul#text").removeClass("active-list");
+
     const elem = $(e.target).parent().parent().data("item-index");
     const result = offers.find((item) => {
       return item.id === elem;
     });
 
-    if ((orderedArr.includes(offers[result.id])) && ($(`li#offer-${elem}`).length == 1)) {
+    if (
+      orderedArr.includes(offers[result.id]) &&
+      $(`li#offer-${elem}`).length == 1
+    ) {
       console.log("delete");
-      $(`li#offer-${elem}`).remove()
-      orderedArr.indexOf(offers[elem]);
-      console.log(orderedArr)
+      // Deleting from DOM
+      $(`li#offer-${elem}`).remove();
 
+      // Deleting from Array for ORDER NAMES
+      if (orderedArr.indexOf(offers[elem]) > -1) {
+        orderedArr.splice(orderedArr.indexOf(offers[elem]), 1);
+      }
+      // Deleting from Array for PRICE
+      if (priceAmount.indexOf(offers[elem].price) > -1) {
+        priceAmount.splice(priceAmount.indexOf(offers[elem].price), 1);
+      }
+      document.getElementById("price-tag").innerHTML =
+        "Price:  " + sum(priceAmount);
+
+      // console.log(orderedArr);
+      // console.log(priceAmount);
+      // console.log(sum(priceAmount));
     } else if (result.id === elem) {
-      console.log('added');
-      packageBlock.append(`<li class="offers-card-item" id="offer-${elem}"> ${offers[elem].name} price:${offers[elem].price}</li>`);
+      console.log("added");
       orderedArr.push(offers[elem]);
-      console.log(orderedArr)
+      priceAmount.push(offers[elem].price);
+
+      packageBlock.append(
+        `<li class="offers-card-item wow slideInLeft" id="offer-${elem}"> ${offers[elem].name}</li>`
+      );
+
+      // console.log(priceAmount);
+      // console.log(orderedArr);
+      // console.log(sum(priceAmount));
+
+      document.getElementById("price-tag").innerHTML =
+        "Price:  " + sum(priceAmount) + "$";
+    } else {
+      return null;
     }
-    else{
-      return null
+    
+    if (orderedArr.length > 0){
+      $('ul#text').removeClass('active-list');
+    }else{
+      console.log('tete')
+      $("ul#text").addClass('active-list');
     }
+
   });
+
 });
 
 var swiper = new Swiper(".swiper-container", {
@@ -94,6 +146,7 @@ var swiper = new Swiper(".swiper-container", {
     clickable: true,
   },
 });
+
 
 (function () {
   // Add event listener
@@ -123,4 +176,9 @@ var swiper = new Swiper(".swiper-container", {
 function valueChanged(e) {
   let a = e.value;
   e.style.background = `linear-gradient(to right, #FDB914,#FDB914 ${a}%, #eee ${a}%)`;
+}
+
+function toggle() {
+  var sec = document.getElementById('nav');
+  sec.classList.toggle('activeB')
 }
