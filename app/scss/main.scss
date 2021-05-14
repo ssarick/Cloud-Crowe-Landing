@@ -127,6 +127,10 @@ strong {
     right: 0;
     bottom: 50px;
     z-index: 999;
+    ul{
+    justify-content: space-between;
+
+    }
   }
 }
 #myVideo {
