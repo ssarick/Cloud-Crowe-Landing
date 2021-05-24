@@ -38,7 +38,10 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.65;
-  font-family: $Syne-med;
+  font-family: $Syne-reg;
+  &:lang(ru){
+    font-family: 'Ubuntu', sans-serif;
+  }
   overflow-x: hidden;
   color: $text;
   background-color: $color-light;
@@ -91,6 +94,7 @@ strong {
   font-weight: bold;
 }
 
+
 //..............................................................................
 //.HHHH...HHHH..EEEEEEEEEEE....AAAAA.....ADDDDDDDD....DEEEEEEEEEE.ERRRRRRRRR....
 //.HHHH...HHHH..EEEEEEEEEEE....AAAAA.....ADDDDDDDDD...DEEEEEEEEEE.ERRRRRRRRRR...
@@ -127,9 +131,11 @@ strong {
     right: 0;
     bottom: 50px;
     z-index: 999;
-    ul{
-    justify-content: space-between;
-
+    &:lang(ru){
+      font-family: 'Ubuntu', sans-serif;
+    }
+    ul {
+      justify-content: space-between;
     }
   }
 }
@@ -162,8 +168,7 @@ strong {
 .navbar {
   position: relative;
   padding: 10px 0;
-  backdrop-filter: contrast(1) blur(10px);
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 1);
+  backdrop-filter: contrast(0.8) blur(10px);
   z-index: 99999;
   position: fixed;
   top: 0;
@@ -171,15 +176,14 @@ strong {
   right: 0;
   transition: 0.3s;
   img {
-    // width: 150px;
     width: 70px;
     height: 100%;
   }
-  #burger{
+  #burger {
     display: flex;
-    .list{
+    .list {
       display: flex;
-    }    
+    }
   }
 }
 .navbar-brand {
@@ -193,8 +197,7 @@ strong {
     line-height: 1;
   }
   img {
-    width: 70px;
-    height: 100%;
+    width: 200px;
   }
 }
 .nav-hide {
@@ -216,6 +219,12 @@ strong {
   justify-content: space-around;
 }
 .list {
+  &:lang(uz){
+    font-size: 14px;
+  }
+  &:lang(en){
+    font-size: 16px;
+  }
   display: flex;
   align-content: center;
   align-items: center;
@@ -228,10 +237,10 @@ strong {
       transform: scale(1.1);
     }
     a {
+      color: $text-wh;
       font-family: $Syne-med;
-      font-size: 16px;
       &:hover {
-        color: $text-wh;
+        color: $text;
         transition: 0.3s;
       }
     }
@@ -240,6 +249,83 @@ strong {
     color: $text;
     font-family: $Dmsans-reg;
     font-size: 14px;
+  }
+}
+
+.language {
+  &:lang(ru){
+    font-family: 'Ubuntu', sans-serif;
+  }
+  position: relative;
+  padding: 2px;
+  box-sizing: border-box;
+  margin-right: 18px;
+  color: $text-wh;
+  .icon-down{
+    filter: invert(1);
+    transition: 0.3s all;
+    margin-left: 10px;
+  }
+  &_item {
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bold;
+    a {
+      color: #fff;
+      display: flex;
+      img {
+        max-width: 20px;
+        margin-right: 10px;
+      }
+    }
+    &:hover {
+      color: $text-wh;
+    }
+  }
+  &_main {
+    box-sizing: border-box;
+    z-index: 2;
+    color: #fff;
+    p {
+      margin-right: 7px;
+    }
+    img{
+      max-width: 20px;
+      margin-right: 10px;
+    }
+  }
+  &_other {
+    display: none;
+    z-index: 0;
+  }
+  &_wrap {
+    box-sizing: border-box;
+    z-index: -1;
+    position: absolute;
+    transition: 0.3s all;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 2px;
+  }
+  &.opened {
+    border-bottom: none;
+    .language_main {
+      .icon-down {
+        transform: rotate(180deg);
+      }
+    }
+    .language_other {
+      display: flex;
+    }
+    .language_wrap {
+      transform: translateY(40px);
+    }
   }
 }
 
@@ -286,7 +372,7 @@ strong {
     align-content: center;
     position: relative;
   }
-  .swiper-for-mob{
+  .swiper-for-mob {
     display: none;
   }
 }
@@ -297,8 +383,8 @@ strong {
   background: url("../img/kisspng-ribbon-download-gold-ribbon-5aab74e4d73163.7075083415211860208814.png"),
     url("../img/kisspng-red-ribbon-download-clip-art-ribbon-colored-ribbon-5aa749946cce56.1216504015209127884457.png");
   background-repeat: no-repeat;
-  background-position: bottom, right;
-  background-size: 30%, 30%;
+  background-position: bottom, top;
+  background-size: 50%, 50%;
 }
 
 .title {
@@ -309,6 +395,12 @@ strong {
   line-height: 1;
   font-size: 90px;
   opacity: 0.5;
+  &:lang(uz){
+    font-size: 60px;
+  }
+  &:lang(ru){
+    font-size: 50px;
+  }
 }
 
 .info {
@@ -338,16 +430,21 @@ strong {
     max-width: 40px;
   }
   &-title {
+    width: 100%;
     margin: 10px 0;
     font-family: $Dmsans-bold;
-    font-size: 26px;
+    line-height: 1;
     span {
-      font-size: 30px;
+      overflow: hidden;
+      width: 100%;
+      font-size: 20px;
     }
   }
   &-text {
     font-family: $Dmsans-reg;
-    font-size: 16px;
+    font-size: 14px;
+    overflow: hidden;
+
   }
   .list {
     .btn {
@@ -393,6 +490,9 @@ strong {
         color: $color-yellow;
       }
     }
+  }
+  &:lang(ru){
+    font-family: 'Ubuntu', sans-serif;
   }
 }
 
@@ -442,9 +542,10 @@ strong {
 //.................................................................................
 
 .service {
-  // background: url('../img/jan-canty-OsAjoj6JFK0-unsplash.jpg') no-repeat;
+  // background: url('../img/yumi-kim-ofhso5YyN3o-unsplash.jpg') no-repeat;
   background-color: $color-yellow;
-  background-size: cover;
+  background-size: 150%;
+  background-position: center;
   margin: 0 auto;
   padding: 50px 0;
   position: relative;
@@ -558,8 +659,8 @@ strong {
     font-size: 14px;
     font-family: $Dmsans-reg;
   }
-  .list{
-    a{
+  .list {
+    a {
       margin: 20px auto;
     }
   }
@@ -617,9 +718,11 @@ strong {
 //.....OOOOOO.....FFFF.......FFFF.......EEEEEEEEEEE.RRRR....RRRR..SSSSSSSS....
 //............................................................................
 .offers {
+  display: none;
   position: relative;
   padding: 50px 0;
-  background: url("../img/alesia-kazantceva-XLm6-fPwK5Q-unsplash.jpg") no-repeat;
+  height: 100vh;
+  background: url("../img/zuyet-awarmatik-fr_bTrfRl74-unsplash.jpg") no-repeat;
   background-size: cover;
   &-wrapper {
     display: flex;
@@ -683,8 +786,7 @@ strong {
         top: -2px;
         width: 16px;
         margin-right: 5px;
-        filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
-          brightness(104%) contrast(97%);
+        filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
       }
       img.listOr {
         position: relative;
@@ -731,8 +833,7 @@ strong {
         background: url("../img/checked.svg");
         // filter: invert(51%) sepia(95%) saturate(385%) hue-rotate(57deg)
         // brightness(101%) contrast(89%);
-        filter: invert(68%) sepia(92%) saturate(587%) hue-rotate(347deg)
-          brightness(102%) contrast(98%);
+        filter: invert(68%) sepia(92%) saturate(587%) hue-rotate(347deg) brightness(102%) contrast(98%);
         background-size: contain;
         width: 16px;
         height: 16px;
@@ -879,6 +980,10 @@ input:checked + .slider:before {
   // background: url('../img/luca-bravo-SRjZtxsK3Os-unsplash.jpg') no-repeat;
   background-size: cover;
   color: $text-wh;
+  .navbar-brand img {
+    filter: invert(0);
+    width: 250px;
+  }
   img {
     filter: invert(1);
   }
@@ -938,8 +1043,7 @@ input:checked + .slider:before {
         left: 0;
         width: 28px;
         height: 28px;
-        filter: invert(82%) sepia(42%) saturate(2615%) hue-rotate(347deg)
-          brightness(101%) contrast(98%);
+        filter: invert(82%) sepia(42%) saturate(2615%) hue-rotate(347deg) brightness(101%) contrast(98%);
         background-size: contain;
       }
 
@@ -1001,7 +1105,7 @@ input:checked + .slider:before {
       }
     }
   }
-  &-copyright{
+  &-copyright {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1027,11 +1131,19 @@ input:checked + .slider:before {
     &:hover {
       transition: 0.3s;
       transform: scale(1.1);
-      filter: invert(33%) sepia(27%) saturate(1252%) hue-rotate(182deg)
-        brightness(91%) contrast(86%);
+      filter: invert(33%) sepia(27%) saturate(1252%) hue-rotate(182deg) brightness(91%) contrast(86%);
     }
     img {
       max-width: 30px;
+    }
+  }
+}
+
+
+body {
+  &[lang="ru"] {
+    .list-btn a{
+      font-family: $Roboto-med;
     }
   }
 }
