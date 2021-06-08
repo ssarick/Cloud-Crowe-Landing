@@ -146,7 +146,7 @@ strong {
   left: 0;
   right: 0;
   width: 100%;
-  max-width: 2560px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -166,7 +166,6 @@ strong {
 //.NNNN...NNNNNNAAA.....AAAA..VVVVV....VVVBBBBBBBB.BBBBA.....AAAAAAAR.....RRR..
 //.............................................................................
 .navbar {
-  position: relative;
   padding: 10px 0;
   backdrop-filter: contrast(0.8) blur(10px);
   z-index: 99999;
@@ -251,13 +250,17 @@ strong {
     font-size: 14px;
   }
 }
-
+.forLang{
+  position: relative;
+  align-items: center;
+}
 .language {
   &:lang(ru){
     font-family: 'Ubuntu', sans-serif;
   }
-  position: relative;
+  position: absolute;
   padding: 2px;
+  right: -120px;
   box-sizing: border-box;
   margin-right: 18px;
   color: $text-wh;
@@ -271,7 +274,6 @@ strong {
     display: flex;
     align-items: center;
     font-size: 14px;
-    font-weight: 500;
     cursor: pointer;
     border-radius: 15px;
     font-weight: bold;
@@ -457,7 +459,7 @@ strong {
 .active-card {
   transition: width 2s;
   transition-timing-function: cubic-bezier(0.5, 1);
-  transition: 0.5s;
+  //transition: 0.5s;
   &:hover {
     transition: 0.5s;
     width: 70%;
@@ -542,12 +544,8 @@ strong {
 //.................................................................................
 
 .service {
-  // background: url('../img/yumi-kim-ofhso5YyN3o-unsplash.jpg') no-repeat;
   background-color: $color-yellow;
-  background-size: 150%;
-  background-position: center;
   margin: 0 auto;
-  padding: 50px 0;
   position: relative;
   &-card {
     position: relative;
@@ -579,6 +577,134 @@ strong {
       max-width: 40%;
       width: 50px;
       margin: 10px 0;
+    }
+  }
+  .swiper-container{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #E74C3C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+      font-family: $Roboto-bold;
+      font-size: 64px;
+      padding: 30px 0;
+      line-height: 1.2;
+    }
+    p{
+      width: 35%;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 50px;
+    }
+
+    &:nth-child(1){
+      color: #ffffff;
+      background: #E74C3C;
+      h1{
+        width: 40%;
+      }
+      span{
+        color: #FDB914;
+      }
+    }
+    &:nth-child(2){
+      background: #F1C40F;
+      p{
+        color: #202020;
+      }
+    }
+    &:nth-child(3){
+      color: #ffffff;
+      background: #34495E;
+      p{
+        opacity: 0.7;
+      }
+    }
+    &:nth-child(4){
+      color: #ffffff;
+      background: #2ECC71;
+      p{
+        opacity: 0.7;
+      }
+    }
+    &:nth-child(5){
+      background: #8E44AD;
+      color: #ffffff;
+      p{
+        opacity: 0.7;
+      }
+    }
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-next{
+    right: 60px;
+  }
+  .swiper-button-prev{
+    left: 60px;
+  }
+  .swiper-button-prev, .swiper-button-next{
+    color: #ffffff;
+    &:after{
+
+    }
+  }
+
+  .btnSlide {
+    position: relative;
+    display: inline-flex;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    color: $text-wh;
+    background: $text;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 1;
+    &::before{
+      z-index: 0;
+      content: '';
+      position: absolute;
+      top: var(--y);
+      left: var(--x);
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: $color-yellow;
+      transition: width 0.5s, height 0.5s;
+    }
+    &:hover{
+      transition: 0.5s;
+      color: $text;
+    }
+    &:hover::before{
+      color: $text;
+
+      z-index: 0;
+      width: 350px;
+      height: 350px;
+    }
+    span{
+      padding: 15px 70px;
+      position: relative;
+      z-index: 1;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
 }
@@ -647,9 +773,11 @@ strong {
 
 .whyme {
   position: relative;
-  padding: 50px 0;
+  padding: 110px 0 0 0;
   background: url("../img/john-unwin-ot93hAL2Tc4-unsplash.jpg") no-repeat;
   background-size: cover;
+  display: flex;
+  align-items: center;
   &-title {
     padding-top: 40px;
     font-family: $Syne-bold;
@@ -668,7 +796,7 @@ strong {
 .whyme-wrapper {
   position: relative;
   display: flex;
-  padding: 30px;
+  padding: 0 30px;
   border-radius: 30px;
   justify-content: space-between;
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
@@ -718,7 +846,6 @@ strong {
 //.....OOOOOO.....FFFF.......FFFF.......EEEEEEEEEEE.RRRR....RRRR..SSSSSSSS....
 //............................................................................
 .offers {
-  display: none;
   position: relative;
   padding: 50px 0;
   height: 100vh;
@@ -765,7 +892,6 @@ strong {
         width: 300px;
         padding: 8px 16px;
         cursor: pointer;
-        border: none;
         color: $text-wh;
         background-color: $color-yellow;
         border: 2px solid $color-yellow;
@@ -793,8 +919,6 @@ strong {
         top: -2px;
         width: 16px;
         margin-right: 5px;
-        // filter: invert(51%) sepia(95%) saturate(385%) hue-rotate(57deg)
-        //   brightness(101%) contrast(89%);
         filter: invert(100%);
       }
       &:hover img {
@@ -831,8 +955,6 @@ strong {
         left: 0;
         top: 5px;
         background: url("../img/checked.svg");
-        // filter: invert(51%) sepia(95%) saturate(385%) hue-rotate(57deg)
-        // brightness(101%) contrast(89%);
         filter: invert(68%) sepia(92%) saturate(587%) hue-rotate(347deg) brightness(102%) contrast(98%);
         background-size: contain;
         width: 16px;
