@@ -145,8 +145,8 @@ strong {
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  max-width: 100%;
+  width: 110%;
+  max-width: 110%;
   margin: 0 auto;
 }
 
@@ -167,7 +167,7 @@ strong {
 //.............................................................................
 .navbar {
   padding: 10px 0;
-  backdrop-filter: contrast(0.8) blur(10px);
+  background-color: rgba(14, 12, 12, 0.2);
   z-index: 99999;
   position: fixed;
   top: 0;
@@ -358,9 +358,22 @@ strong {
   box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.7);
 }
 
-.blurred-back {
-  backdrop-filter: contrast(1) blur(10px);
+.blurred-back{
+  background-color: rgba(114, 112, 112, 0.2);
+
 }
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .blurred-back {
+    background-color: rgba(0, 0, 0, 0.02);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: contrast(1) blur(10px);
+  }
+  .navbar{
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: contrast(1) blur(10px);
+  }
+}
+
 
 .news {
   margin: 0 auto;
@@ -544,7 +557,7 @@ strong {
 //.................................................................................
 
 .service {
-  background-color: $color-yellow;
+  background: linear-gradient(90deg, #EB7367 0%, #EB7367 48.44%, #A677BA 56.25%, #A677BA 100%), #A677BA;
   margin: 0 auto;
   position: relative;
   &-card {
@@ -587,61 +600,214 @@ strong {
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #E74C3C;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    position: relative;
     h1{
       font-family: $Roboto-bold;
-      font-size: 64px;
+      font-size: 54px;
       padding: 30px 0;
       line-height: 1.2;
     }
     p{
       width: 35%;
-      font-size: 30px;
+      font-size: 22px;
       font-weight: bold;
       line-height: 1.2;
+      margin: 0 auto;
       margin-bottom: 50px;
     }
 
     &:nth-child(1){
       color: #ffffff;
-      background: #E74C3C;
+      background: #EB7367;
       h1{
-        width: 40%;
+        width: 60%;
       }
       span{
         color: #FDB914;
       }
     }
     &:nth-child(2){
-      background: #F1C40F;
+      //background: linear-gradient(238.46deg, #FFD85A -27139.38%, #F9AE41 -18020.69%);
+      background: linear-gradient(90deg, #EB7367 0%, #F9AE41 51.74%);
+      overflow: hidden;
       p{
         color: #202020;
       }
+      .svg-relaxedMan{
+        position: absolute;
+        transform: scale(1.2);
+        left: 5%;
+        bottom: 8%;
+        #body, #allMain, #shadow {
+          animation: levitate 3s infinite;
+          transform-origin: center;
+        }
+        #sun{
+          animation: sun 2s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        @keyframes sun {
+          0%{
+            transform: scale(1);
+          }
+          50%{
+            transform: scale(1.1);
+          }
+          100%{
+            transform: scale(1);
+          }
+        }
+        @keyframes levitate {
+          0%{
+            transform: translateY(-3px);
+          }
+          50%{
+            transform: translateY(0px);
+          }
+          100%{
+            transform: translateY(-3px);
+          }
+        }
+      }
     }
     &:nth-child(3){
+      overflow: hidden;
       color: #ffffff;
       background: #34495E;
       p{
         opacity: 0.7;
       }
+      .svg-rocket{
+        position: absolute;
+        width: 25%;
+        left: -10px;
+        bottom: -20px;
+        #LeftCloud{
+          animation: shake 1s infinite;
+          transform-origin: center;
+        }
+        #RightCloud{
+          animation: shake 1.5s infinite;
+          transform-origin: center;
+        }
+        #flames{
+          animation: shake 0.15s infinite;
+          transform-origin: center;
+        }
+        #redFlame, #orangeFlame{
+          animation: flame 1s infinite;
+          transform-origin: center;
+        }
+        @keyframes flame {
+          from{
+            transform: scale(1.2);
+          }
+          to{
+            transform: scale(0.95);
+          }
+        }
+        @keyframes shake {
+          0%{
+            transform: translate3d(0.5px, 0.5px, 0.5px);
+          }
+          50%{
+            transform: translate3d(-0.5px, -0.5px, -0.5px) scale(0.99);
+          }
+          100%{
+            transform: translate3d(0.5px, 0.5px, 0.5px);
+          }
+        }
+      }
+
     }
     &:nth-child(4){
+      overflow: hidden;
+      @keyframes move {
+        0%{
+          width: 1%;
+          height: 30px;
+        }
+        17%{
+          width: 40%;
+          height: 30px;
+        }
+        25%{
+          width: 40%;
+          height: 30px;
+        }
+        50%{
+          width: 40%;
+          height: 50vh;
+        }
+        75%{
+          width: 40%;
+          height: 0;
+        }
+        100%{
+          width: 0;
+          height: 0;
+        }
+      }
+      &::before{
+        position: absolute;
+        content: '';
+        z-index: 1;
+        width: 0;
+        top: 90px;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: rgba(0,0,0,0.1);
+        backdrop-filter: contrast(1) blur(3px);
+        animation: move 4s infinite;
+      }
       color: #ffffff;
-      background: #2ECC71;
+      background: linear-gradient(90deg, #34495E 0%, #A677BA 100%);
       p{
         opacity: 0.7;
       }
     }
     &:nth-child(5){
-      background: #8E44AD;
+      background: #A677BA;
       color: #ffffff;
       p{
         opacity: 0.7;
+      }
+      .svg-rolls{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        #roll_top, #roll_bottom, #roll_left{
+          animation: rollRight 10s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+
+        #roll_mid, #roll_right{
+          animation: rollLeft 10s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        @keyframes rollRight {
+          from{
+            transform: rotateZ(0deg);
+          }
+          to{
+            transform: rotateZ(360deg);
+          }
+        }
+        @keyframes rollLeft {
+          from{
+            transform: rotateZ(0deg);
+          }
+          to{
+            transform: rotateZ(-360deg);
+          }
+        }
       }
     }
   }
@@ -847,7 +1013,9 @@ strong {
 //............................................................................
 .offers {
   position: relative;
-  padding: 50px 0;
+  display: flex;
+  align-items: center;
+
   height: 100vh;
   background: url("../img/zuyet-awarmatik-fr_bTrfRl74-unsplash.jpg") no-repeat;
   background-size: cover;
@@ -1094,14 +1262,19 @@ input:checked + .slider:before {
 //.FFFF........OOOOOOOOOO....OOOOOOOOOO......TTTT....EEEEEEEEEEE.RRRR...RRRR..
 //.FFFF..........OOOOOO........OOOOOO........TTTT....EEEEEEEEEEE.RRRR....RRR..
 .footer {
+  padding-top: 100px;
   font-family: $Dmsans-med;
-  padding: 60px 0;
+  align-items: center;
   position: relative;
   display: flex;
+  flex-direction: column;
   background-color: $color-dark;
   // background: url('../img/luca-bravo-SRjZtxsK3Os-unsplash.jpg') no-repeat;
   background-size: cover;
   color: $text-wh;
+  iframe{
+    align-self: flex-end;
+  }
   .navbar-brand img {
     filter: invert(0);
     width: 250px;
@@ -1121,6 +1294,7 @@ input:checked + .slider:before {
   }
   &-wrapper {
     display: flex;
+    padding: 50px 0;
   }
   &-list {
     border-left: 2px solid $color-yellow;

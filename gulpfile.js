@@ -22,6 +22,7 @@ gulp.task('browser-sync', function () {
 		server: {
 			baseDir: 'app'
 		},
+		port: 8000,
 		notify: false,
 		// open: false,
 		// online: false, // Work Offline Without Internet Connection

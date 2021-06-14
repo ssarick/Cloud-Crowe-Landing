@@ -139,7 +139,10 @@ $(document).ready(() => {
     }
 
   });
-
+  $('#myVideo').on('ended', function () {
+    this.load();
+    this.play();
+  });
 });
 
 var swiper = new Swiper(".swiper-container", {
