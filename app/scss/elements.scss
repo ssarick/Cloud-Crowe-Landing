@@ -62,6 +62,32 @@
     }
   }
 }
+.btnMain {
+  position: relative;
+  display: inline-flex;
+  box-shadow: 0 2px 4px rgba($color-yellow, 0.25);
+  color: $text-wh;
+  background: $color-yellow;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: 1s;
+
+  z-index: 1;
+  &:hover{
+    transition: 1s;
+    color: $text;
+    transform: scale(1.05);
+  }
+  span{
+    padding: 15px 70px;
+    position: relative;
+    z-index: 1;
+    &:hover{
+      transform: scale(1);
+    }
+  }
+}
 
 .btn-white {
   color: $text-wh;

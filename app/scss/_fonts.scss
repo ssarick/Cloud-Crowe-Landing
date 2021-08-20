@@ -1,117 +1,39 @@
 @font-face {
-  font-family: "DMSans-Bold";
-  src: url("../fonts/DMSans/DMSansBold/DMSans-Bold.eot");
-  src: url("../fonts/DMSans/DMSansBold/DMSans-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/DMSans/DMSansBold/DMSans-Bold.svg#DMSans-Bold") format("svg"),
-    url("../fonts/DMSans/DMSansBold/DMSans-Bold.ttf") format("truetype"),
-    url("../fonts/DMSans/DMSansBold/DMSans-Bold.woff") format("woff"),
-    url("../fonts/DMSans/DMSansBold/DMSans-Bold.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "DMSans-Medium";
-  src: url("../fonts/DMSans/DMSansMed/DMSans-Medium.eot");
-  src: url("../fonts/DMSans/DMSansMed/DMSans-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/DMSans/DMSansMed/DMSans-Medium.svg#DMSans-Medium")
-      format("svg"),
-    url("../fonts/DMSans/DMSansMed/DMSans-Medium.ttf") format("truetype"),
-    url("../fonts/DMSans/DMSansMed/DMSans-Medium.woff") format("woff"),
-    url("../fonts/DMSans/DMSansMed/DMSans-Medium.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "DMSans-Regular";
-  src: url("../fonts/DMSans/DMSansReg/DMSans-Regular.eot");
-  src: url("../fonts/DMSans/DMSansReg/DMSans-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/DMSans/DMSansReg/DMSans-Regular.svg#DMSans-Regular")
-      format("svg"),
-    url("../fonts/DMSans/DMSansReg/DMSans-Regular.ttf") format("truetype"),
-    url("../fonts/DMSans/DMSansReg/DMSans-Regular.woff") format("woff"),
-    url("../fonts/DMSans/DMSansReg/DMSans-Regular.woff2") format("woff2");
+  font-family: "Roboto-Bold";
+  src: url("../fonts/Roboto/RobotoBold/Roboto-Bold.eot");
+  src: url("../fonts/Roboto/RobotoBold/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/Roboto/RobotoBold/Roboto-Bold.svg#Roboto-Bold") format("svg"),
+  url("../fonts/Roboto/RobotoBold/Roboto-Bold.ttf") format("truetype"),
+  url("../fonts/Roboto/RobotoBold/Roboto-Bold.woff") format("woff"),
+  url("../fonts/Roboto/RobotoBold/Roboto-Bold.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: "Roboto-Bold";
-  src: url("../fonts/Roboto/RobotoBold/Roboto-Bold.eot");
-  src: url("../fonts/Roboto/RobotoBold/Roboto-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Roboto/RobotoBold/Roboto-Bold.svg#Roboto-Bold") format("svg"),
-    url("../fonts/Roboto/RobotoBold/Roboto-Bold.ttf") format("truetype"),
-    url("../fonts/Roboto/RobotoBold/Roboto-Bold.woff") format("woff"),
-    url("../fonts/Roboto/RobotoBold/Roboto-Bold.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 @font-face {
   font-family: "Roboto-Medium";
   src: url("../fonts/Roboto/RobotoMed/Roboto-Medium.eot");
-  src: url("../fonts/Roboto/RobotoMed/Roboto-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Roboto/RobotoMed/Roboto-Medium.svg#Roboto-Medium")
-      format("svg"),
-    url("../fonts/Roboto/RobotoMed/Roboto-Medium.ttf") format("truetype"),
-    url("../fonts/Roboto/RobotoMed/Roboto-Medium.woff") format("woff"),
-    url("../fonts/Roboto/RobotoMed/Roboto-Medium.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Roboto-Regular";
-  src: url("../fonts/Roboto/RobotoReg/Roboto-Regular.eot");
-  src: url("../fonts/Roboto/RobotoReg/Roboto-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Roboto/RobotoReg/Roboto-Regular.svg#Roboto-Regular")
-      format("svg"),
-    url("../fonts/Roboto/RobotoReg/Roboto-Regular.ttf") format("truetype"),
-    url("../fonts/Roboto/RobotoReg/Roboto-Regular.woff") format("woff"),
-    url("../fonts/Roboto/RobotoReg/Roboto-Regular.woff2") format("woff2");
+  src: url("../fonts/Roboto/RobotoMed/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/Roboto/RobotoMed/Roboto-Medium.svg#Roboto-Medium") format("svg"),
+  url("../fonts/Roboto/RobotoMed/Roboto-Medium.ttf") format("truetype"),
+  url("../fonts/Roboto/RobotoMed/Roboto-Medium.woff") format("woff"),
+  url("../fonts/Roboto/RobotoMed/Roboto-Medium.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Syne-Bold";
-  src: url("../fonts/Syne/SyneBold/Syne-Bold.eot");
-  src: url("../fonts/Syne/SyneBold/Syne-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Syne/SyneBold/Syne-Bold.svg#Syne-Bold") format("svg"),
-    url("../fonts/Syne/SyneBold/Syne-Bold.ttf") format("truetype"),
-    url("../fonts/Syne/SyneBold/Syne-Bold.woff") format("woff"),
-    url("../fonts/Syne/SyneBold/Syne-Bold.woff2") format("woff2");
+  font-family: "Roboto-Regular";
+  src: url("../fonts/Roboto/RobotoReg/Roboto-Regular.eot");
+  src: url("../fonts/Roboto/RobotoReg/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/Roboto/RobotoReg/Roboto-Regular.svg#Roboto-Regular") format("svg"),
+  url("../fonts/Roboto/RobotoReg/Roboto-Regular.ttf") format("truetype"),
+  url("../fonts/Roboto/RobotoReg/Roboto-Regular.woff") format("woff"),
+  url("../fonts/Roboto/RobotoReg/Roboto-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "Syne-Medium";
-  src: url("../fonts/Syne/SyneMed/Syne-Medium.eot");
-  src: url("../fonts/Syne/SyneMed/Syne-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Syne/SyneMed/Syne-Medium.svg#Syne-Medium") format("svg"),
-    url("../fonts/Syne/SyneMed/Syne-Medium.ttf") format("truetype"),
-    url("../fonts/Syne/SyneMed/Syne-Medium.woff") format("woff"),
-    url("../fonts/Syne/SyneMed/Syne-Medium.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Syne-Regular";
-  src: url("../fonts/Syne/SyneReg/Syne-Regular.eot");
-  src: url("../fonts/Syne/SyneReg/Syne-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/Syne/SyneReg/Syne-Regular.svg#Syne-Regular") format("svg"),
-    url("../fonts/Syne/SyneReg/Syne-Regular.ttf") format("truetype"),
-    url("../fonts/Syne/SyneReg/Syne-Regular.woff") format("woff"),
-    url("../fonts/Syne/SyneReg/Syne-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
+
 @font-face {
   font-family: "Gardens";
   src: url("../fonts/20011.ttf");

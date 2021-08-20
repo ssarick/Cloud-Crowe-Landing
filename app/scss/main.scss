@@ -19,36 +19,17 @@
   color: #000;
 }
 
-//......................................................
-//.BBBBBBBBBB.....OOOOOOO.....DDDDDDDDD...DYYY....YYYY..
-//.BBBBBBBBBBB...OOOOOOOOOO...DDDDDDDDDD..DYYYY..YYYYY..
-//.BBBBBBBBBBB..OOOOOOOOOOOO..DDDDDDDDDDD..YYYY..YYYY...
-//.BBBB...BBBB..OOOOO..OOOOO..DDDD...DDDD..YYYYYYYYY....
-//.BBBB...BBBB.BOOOO....OOOOO.DDDD....DDDD..YYYYYYYY....
-//.BBBBBBBBBBB.BOOO......OOOO.DDDD....DDDD...YYYYYY.....
-//.BBBBBBBBBB..BOOO......OOOO.DDDD....DDDD...YYYYYY.....
-//.BBBBBBBBBBB.BOOO......OOOO.DDDD....DDDD....YYYY......
-//.BBBB....BBBBBOOOO....OOOOO.DDDD....DDDD....YYYY......
-//.BBBB....BBBB.OOOOO..OOOOO..DDDD...DDDDD....YYYY......
-//.BBBBBBBBBBBB.OOOOOOOOOOOO..DDDDDDDDDDD.....YYYY......
-//.BBBBBBBBBBB...OOOOOOOOOO...DDDDDDDDDD......YYYY......
-//.BBBBBBBBBB......OOOOOO.....DDDDDDDDD.......YYYY......
-//......................................................
 
 body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
   line-height: 1.65;
-  font-family: $Syne-reg;
-
-  &:lang(ru) {
-    font-family: 'Ubuntu', sans-serif;
-  }
+  font-family: $Roboto-reg;
 
   overflow-x: hidden;
   color: $text;
-  background-color: $color-light;
+  background-color: $color-dark;
 
   input,
   textarea {
@@ -103,22 +84,18 @@ strong {
   font-weight: bold;
 }
 
+.pre-loader{
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+}
 
-//..............................................................................
-//.HHHH...HHHH..EEEEEEEEEEE....AAAAA.....ADDDDDDDD....DEEEEEEEEEE.ERRRRRRRRR....
-//.HHHH...HHHH..EEEEEEEEEEE....AAAAA.....ADDDDDDDDD...DEEEEEEEEEE.ERRRRRRRRRR...
-//.HHHH...HHHH..EEEEEEEEEEE...AAAAAA.....ADDDDDDDDDD..DEEEEEEEEEE.ERRRRRRRRRR...
-//.HHHH...HHHH..EEEE..........AAAAAAA....ADDD...DDDD..DEEE........ERRR...RRRRR..
-//.HHHH...HHHH..EEEE.........AAAAAAAA....ADDD....DDDD.DEEE........ERRR...RRRRR..
-//.HHHHHHHHHHH..EEEEEEEEEE...AAAAAAAA....ADDD....DDDD.DEEEEEEEEE..ERRRRRRRRRR...
-//.HHHHHHHHHHH..EEEEEEEEEE...AAAA.AAAA...ADDD....DDDD.DEEEEEEEEE..ERRRRRRRRRR...
-//.HHHHHHHHHHH..EEEEEEEEEE..EAAAAAAAAA...ADDD....DDDD.DEEEEEEEEE..ERRRRRRR......
-//.HHHH...HHHH..EEEE........EAAAAAAAAAA..ADDD....DDDD.DEEE........ERRR.RRRR.....
-//.HHHH...HHHH..EEEE........EAAAAAAAAAA..ADDD...DDDDD.DEEE........ERRR..RRRR....
-//.HHHH...HHHH..EEEEEEEEEEEEEAA....AAAA..ADDDDDDDDDD..DEEEEEEEEEE.ERRR..RRRRR...
-//.HHHH...HHHH..EEEEEEEEEEEEEAA.....AAAA.ADDDDDDDDD...DEEEEEEEEEE.ERRR...RRRRR..
-//.HHHH...HHHH..EEEEEEEEEEEEEAA.....AAAA.ADDDDDDDD....DEEEEEEEEEE.ERRR....RRRR..
-//..............................................................................
 .header {
   position: relative;
   margin: 0 auto;
@@ -127,14 +104,55 @@ strong {
 
   &-content {
     z-index: 2;
-    margin: 0 auto;
-    align-items: end;
+    margin: 0 auto 50px auto;
+    align-items: center;
   }
 
   height: 100vh;
-  padding-top: 150px;
   overflow: hidden;
 
+  .main-title{
+    padding: 40px 0;
+    z-index: 2;
+    width: 100%;
+    &-text{
+      text-align: center;
+      color: #FFFFFF;
+      h1{
+        line-height: 1.2;
+        font-size: 52px;
+        span{
+          color: #FDB914;
+        }
+      }
+      p{
+        margin-top: 20px;
+        font-size: 30px;
+      }
+      a{
+        margin-top: 30px;
+      }
+      .green-pulse {
+        position: relative;
+        margin-bottom: 10px;
+        animation: pulsation 2s infinite;
+        @keyframes pulsation {
+          0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba($color-yellow, 1);
+          }
+          70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 15px rgba($color-yellow , 0);
+          }
+          100% {
+            transform: scale(0.95);
+          }
+        }
+      }
+
+    }
+  }
   .hashtags {
     color: $color-light;
     position: absolute;
@@ -164,25 +182,10 @@ strong {
   margin: 0 auto;
 }
 
-//.............................................................................
-//.NNNN...NNNN.....AAAAA..AAAVV....VVVVVVVBBBBBBBB......AAAA.....AAARRRRRRRR...
-//.NNNNN..NNNN.....AAAAA...AAVV....VVVVVVVBBBBBBBBB....AAAAAA....AAARRRRRRRRR..
-//.NNNNN..NNNN....AAAAAA...AAVV...VVVVVVVVBBBBBBBBB....AAAAAA....AAARRRRRRRRR..
-//.NNNNNN.NNNN....AAAAAAA..AAVVV..VVVV.VVVB....BBBB....AAAAAAA...AAAR....RRRR..
-//.NNNNNN.NNNN...AAAAAAAA...AVVV..VVVV.VVVB....BBBB...BAAAAAAA...AAAR....RRRR..
-//.NNNNNNNNNNN...AAAAAAAA...AVVV..VVVV.VVVBBBBBBBBB...BAAAAAAA...AAARRRRRRRRR..
-//.NNNNNNNNNNN...AAAA.AAAA..AVVV.VVVV..VVVBBBBBBBB....BAAA.AAAA..AAARRRRRRRR...
-//.NNNNNNNNNNN..AAAAAAAAAA...VVVVVVVV..VVVBBBBBBBBB..BBAAAAAAAA..AAARRRRRR.....
-//.NNNNNNNNNNN..AAAAAAAAAAA..VVVVVVVV..VVVB.....BBBB.BBAAAAAAAAA.AAAR.RRRRR....
-//.NNNN.NNNNNN..AAAAAAAAAAA..VVVVVVV...VVVB.....BBBBBBBAAAAAAAAA.AAAR..RRRRR...
-//.NNNN..NNNNN.NAAA....AAAA...VVVVVV...VVVBBBBBBBBBBBBBA....AAAA.AAAR...RRRRR..
-//.NNNN..NNNNN.NAAA.....AAAA..VVVVVV...VVVBBBBBBBBB.BBBA....AAAAAAAAR....RRRR..
-//.NNNN...NNNNNNAAA.....AAAA..VVVVV....VVVBBBBBBBB.BBBBA.....AAAAAAAR.....RRR..
-//.............................................................................
 .navbar {
   padding: 10px 0;
   background-color: rgba(14, 12, 12, 0.2);
-  z-index: 99999;
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -193,23 +196,20 @@ strong {
     width: 70px;
     height: 100%;
   }
-
-  #burger {
-    display: flex;
-
-    .list {
-      display: flex;
-    }
-  }
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  #black-logo{
+    display: none;
+  }
+  #white-logo{
+    display: block;
+  }
 
   div {
     margin: 6px 0 0 16px;
-    font-family: $Dmsans-med;
     font-size: 24px;
     color: $text;
     line-height: 1;
@@ -220,23 +220,21 @@ strong {
   }
 }
 
-.nav-hide {
-  top: 0px;
-  transform: translate(0, -100%);
-  transition: 0.3s;
-}
-
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
   align-content: center;
+  #burger {
+    display: flex;
+    .list {
+      display: flex;
+    }
+  }
 }
-
 .log-reg {
   display: flex;
-  max-width: 400px;
   align-items: baseline;
   justify-content: space-around;
 }
@@ -266,20 +264,14 @@ strong {
 
     a {
       color: $text-wh;
-      font-family: $Syne-med;
 
       &:hover {
-        color: $text;
+        color: $color-yellow;
         transition: 0.3s;
       }
     }
   }
 
-  &-data {
-    color: $text;
-    font-family: $Dmsans-reg;
-    font-size: 14px;
-  }
 }
 
 .forLang {
@@ -287,12 +279,15 @@ strong {
   align-items: center;
 }
 
-.language {
-  &:lang(ru) {
-    font-family: 'Ubuntu', sans-serif;
-  }
+.slideFrom{
+  display: flex;
+  left: 0;
+  transition: 1s;
+}
 
+.language {
   position: absolute;
+  top: 0;
   padding: 2px;
   right: -120px;
   box-sizing: border-box;
@@ -523,63 +518,11 @@ svg {
   }
 }
 
-//.................................................................................
-//...SSSSSSS....EEEEEEEEEEE.RRRRRRRRRR.RRVVV....VVVVVIII....CCCCCCC...CEEEEEEEEEE..
-//..SSSSSSSSS...EEEEEEEEEEE.RRRRRRRRRRR.RVVV....VVVVVIII...CCCCCCCCC..CEEEEEEEEEE..
-//..SSSSSSSSSS..EEEEEEEEEEE.RRRRRRRRRRR.RVVV...VVVVVVIII..CCCCCCCCCCC.CEEEEEEEEEE..
-//.SSSSS..SSSS..EEEE........RRRR...RRRRRRVVVV..VVVV.VIII.ICCCC...CCCC.CEEE.........
-//.SSSSS........EEEE........RRRR...RRRRR.VVVV..VVVV.VIII.ICCC....CCC..CEEE.........
-//..SSSSSSS.....EEEEEEEEEE..RRRRRRRRRRR..VVVV..VVVV.VIII.ICCC.........CEEEEEEEEEE..
-//...SSSSSSSSS..EEEEEEEEEE..RRRRRRRRRRR..VVVV.VVVV..VIII.ICCC.........CEEEEEEEEEE..
-//.....SSSSSSS..EEEEEEEEEE..RRRRRRRR......VVVVVVVV..VIII.ICCC.........CEEEEEEEEEE..
-//........SSSSS.EEEE........RRRR.RRRR.....VVVVVVVV..VIII.ICCC....CCC..CEEE.........
-//.SSSS....SSSS.EEEE........RRRR..RRRR....VVVVVVV...VIII.ICCCC...CCCCCCEEE.........
-//.SSSSSSSSSSSS.EEEEEEEEEEE.RRRR..RRRRR....VVVVVV...VIII..CCCCCCCCCCC.CEEEEEEEEEE..
-//..SSSSSSSSSS..EEEEEEEEEEE.RRRR...RRRRR...VVVVVV...VIII...CCCCCCCCC..CEEEEEEEEEE..
-//...SSSSSSSS...EEEEEEEEEEE.RRRR....RRRR...VVVVV....VIII....CCCCCCC...CEEEEEEEEEE..
-//.................................................................................
-
 .service {
   background: linear-gradient(90deg, #EB7367 0%, #EB7367 48.44%, #A677BA 56.25%, #A677BA 100%), #A677BA;
-  margin: 0 auto;
+
   position: relative;
 
-  &-card {
-    position: relative;
-    border-radius: 30px;
-    color: $text;
-    display: flex;
-    flex-direction: column;
-    max-width: 280px;
-    min-width: 200px;
-    padding: 40px 30px;
-    margin-bottom: 20px;
-    transition: 0.3s;
-
-    &:hover {
-      transform: scale(1.05);
-      transition: 0.3s;
-    }
-
-    &-title {
-      font-family: $Dmsans-med;
-      font-size: 20px;
-      line-height: 1;
-      padding: 10px 0;
-    }
-
-    &-text {
-      font-size: 16px;
-      font-family: $Dmsans-reg;
-      line-height: 1.25;
-    }
-
-    img {
-      max-width: 40%;
-      width: 50px;
-      margin: 10px 0;
-    }
-  }
 
   .swiper-container {
     padding: 0;
@@ -608,8 +551,7 @@ svg {
       font-size: 22px;
       font-weight: bold;
       line-height: 1.2;
-      margin: 0 auto;
-      margin-bottom: 50px;
+      margin: 0 auto 50px;
     }
 
     &:nth-child(1) {
@@ -736,44 +678,6 @@ svg {
 
     &:nth-child(4) {
       overflow: hidden;
-      //@keyframes move {
-      //  0%{
-      //    width: 1%;
-      //    height: 30px;
-      //  }
-      //  17%{
-      //    width: 40%;
-      //    height: 30px;
-      //  }
-      //  25%{
-      //    width: 40%;
-      //    height: 30px;
-      //  }
-      //  50%{
-      //    width: 40%;
-      //    height: 50vh;
-      //  }
-      //  75%{
-      //    width: 40%;
-      //    height: 0;
-      //  }
-      //  100%{
-      //    width: 0;
-      //    height: 0;
-      //  }
-      //}
-      //&::before{
-      //  position: absolute;
-      //  content: '';
-      //  z-index: 1;
-      //  width: 0;
-      //  top: 90px;
-      //  border-radius: 0 0 10px 10px;
-      //  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      //  background-color: rgba(0,0,0,0.1);
-      //  backdrop-filter: contrast(1) blur(3px);
-      //  animation: move 4s infinite;
-      //}
       color: #ffffff;
       background: linear-gradient(90deg, #34495E 0%, #A677BA 100%);
 
@@ -781,9 +685,8 @@ svg {
         opacity: 0.7;
       }
 
-      .blured-text {
+      .blurred-text {
         position: relative;
-        //background-color: #FDB914;
         padding: 20px 40px;
         z-index: 0;
 
@@ -864,13 +767,6 @@ svg {
     }
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .swiper-button-next {
     right: 60px;
   }
@@ -880,6 +776,7 @@ svg {
   }
 
   .swiper-button-prev, .swiper-button-next {
+    outline: none;
     color: #ffffff;
 
     &:after {
@@ -906,7 +803,6 @@ svg {
   border-radius: 13px;
   display: block;
   height: 46px;
-  margin: 0 auto 0 -26px;
   width: 26px;
   margin: 0 auto;
   margin-top: 20px;
@@ -937,7 +833,6 @@ svg {
   }
 }
 
-
 .we-provide {
   text-align: center;
   font-size: 18px;
@@ -946,90 +841,84 @@ svg {
   justify-content: center;
   align-items: center;
   position: relative;
-
+  background: #FFFFFF;
   h1 {
     font-size: 40px;
+    margin-bottom: 40px;
 
     span {
       color: $color-yellow;
     }
   }
 
-  .description {
-    font-size: 14px;
-    width: 60%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-    color: $color-dark;
-    opacity: 0.5;
-  }
-
   .provided {
+    justify-content: space-between;
     &-list {
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      padding-right: 35px;
     }
-
     &-item {
       margin: 10px 0;
-      border-radius: 20px;
-      height: 200px;
-      flex-basis: 23%;
+      height: 150px;
+      width: 150px;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
+      background: #FFFFFF;
+      box-shadow: 0 1.1px 36.3px 2.2px rgba(0, 0, 0, 0.05);
+      transition: 0.5s;
+
       &:before {
         position: absolute;
-        color: $color-light;
-        font-size: 20px;
-        font-weight: bold;
+        color: $color-dark;
+        font-size: 18px;
         line-height: 1;
-        border-radius: 10px;
-        padding-top: 60%;
+        padding-top: 75%;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(5px);
-        transition: 0.1s;
       }
 
       &:after {
         position: relative;
-        backdrop-filter: blur(5px);
-        top: 15%;
-        width: 100px;
-        height: 100px;
+        top: 20%;
+        max-height: 50px;
       }
 
       &:hover {
         cursor: pointer;
-
-        &:before {
-          backdrop-filter: blur(0);
+        transform: scale(1.1);
+        transition: 0.5s;
+        &:after {
+          filter: invert(74%) sepia(84%) saturate(1246%) hue-rotate(345deg) brightness(101%) contrast(102%);
         }
+
       }
 
       &:nth-child(1) {
-        background: url("../img/edo.jpg") no-repeat center;
-        background-size: cover;
-
         &:before {
           content: 'ЭДО';
         }
 
         &:after {
-          content: url("../img/docs.svg");
+          content: url("../img/edo-ico.svg");
         }
+        &:hover {
+          &:after {
+            filter: none;
+            content: url("../img/edo-ico-2.svg");
+
+          }
+        }
+
       }
 
       &:nth-child(2) {
-        background: url("../img/bank.jpg") no-repeat center;
-        background-size: cover;
 
         &:before {
           content: 'Банк';
@@ -1041,34 +930,6 @@ svg {
       }
 
       &:nth-child(3) {
-        background: url("../img/stats.jpg") no-repeat center;
-        background-size: cover;
-
-        &:before {
-          content: 'Статистика';
-        }
-
-        &:after {
-          content: url("../img/stats-ico.svg");
-        }
-      }
-
-      &:nth-child(4) {
-        background: url("../img/report.jpg") no-repeat center;
-        background-size: cover;
-
-        &:before {
-          content: 'Отчёты';
-        }
-
-        &:after {
-          content: url("../img/report-ico.svg");
-        }
-
-      }
-
-      &:nth-child(5) {
-        background: url("../img/storage.jpg") no-repeat center;
 
         &:before {
           content: 'Склад';
@@ -1079,22 +940,69 @@ svg {
         }
       }
 
-      &:nth-child(6) {
-        background: url("../img/hr.jpg") no-repeat center;
-        background-size: cover;
+      &:nth-child(4) {
 
         &:before {
-          content: 'Кадры (HR)';
+          content: 'Кадры';
         }
 
         &:after {
           content: url("../img/hr-ico.svg");
         }
+
+      }
+
+      &:nth-child(5) {
+
+        &:before {
+          content: 'Учёт';
+        }
+
+        &:after {
+          content: url("../img/report-ico.svg");
+        }
+      }
+
+      &:nth-child(6) {
+
+        &:before {
+          content: 'Статистика';
+        }
+
+        &:after {
+          content: url("../img/stats-ico.svg");
+        }
       }
 
       &:nth-child(7) {
-        background: url("../img/msfo.jpg") no-repeat center;
-        background-size: cover;
+
+        &:before {
+          content: 'Налоги';
+        }
+
+        &:after {
+          content: url("../img/soliq-ico.svg");
+        }
+        &:hover {
+          &:after {
+            filter: none;
+            content: url("../img/soliq-ico-2.svg");
+          }
+        }
+      }
+
+      &:nth-child(8) {
+
+        &:before {
+          content: '1С Интеграция';
+          font-size: 16px;
+        }
+
+        &:after {
+          content: url("../img/1C-ico.svg");
+        }
+      }
+      &:nth-child(9) {
 
         &:before {
           content: 'МСФО';
@@ -1105,83 +1013,22 @@ svg {
         }
       }
 
-      &:nth-child(8) {
-        background: url("../img/1c.jpg") no-repeat center;
-        background-size: cover;
-
-        &:before {
-          content: '1С Интеграция';
-        }
-
-        &:after {
-          content: url("../img/1c-ico.svg");
-        }
-      }
-
     }
-  }
-}
-
-
-//............................................................................
-//.WWWW..WWWWW...WWWHHHHH...HHHH.YYYY....YYYY.....MMMMMM...MMMMMM.EEEEEEEEEE..
-//.WWWW..WWWWW..WWWW.HHHH...HHHH.YYYYY..YYYYY.....MMMMMM...MMMMMM.EEEEEEEEEE..
-//.WWWW..WWWWWW.WWWW.HHHH...HHHH..YYYY..YYYY......MMMMMM...MMMMMM.EEEEEEEEEE..
-//.WWWW.WWWWWWW.WWWW.HHHH...HHHH..YYYYYYYYY.......MMMMMMM.MMMMMMM.EEEE........
-//.WWWW.WWWWWWW.WWWW.HHHH...HHHH...YYYYYYYY.......MMMMMMM.MMMMMMM.EEEE........
-//..WWWWWWWWWWW.WWW..HHHHHHHHHHH....YYYYYY........MMMMMMM.MMMMMMM.EEEEEEEEEE..
-//..WWWWWWW.WWWWWWW..HHHHHHHHHHH....YYYYYY........MMMMMMMMMMMMMMM.EEEEEEEEEE..
-//..WWWWWWW.WWWWWWW..HHHHHHHHHHH.....YYYY.........MMMMMMMMMMMMMMM.EEEEEEEEEE..
-//..WWWWWWW.WWWWWWW..HHHH...HHHH.....YYYY.........MMMMMMMMMMMMMMM.EEEE........
-//..WWWWWWW.WWWWWWW..HHHH...HHHH.....YYYY.........MMMM.MMMMM.MMMM.EEEE........
-//...WWWWW...WWWWW...HHHH...HHHH.....YYYY.........MMMM.MMMMM.MMMM.EEEEEEEEEE..
-//...WWWWW...WWWWW...HHHH...HHHH.....YYYY.........MMMM.MMMMM.MMMM.EEEEEEEEEE..
-//...WWWWW...WWWWW...HHHH...HHHH.....YYYY.........MMMM.MMMMM.MMMM.EEEEEEEEEE..
-//............................................................................
-
-.whyme {
-  position: relative;
-  padding: 110px 0 0 0;
-  background: url("../img/john-unwin-ot93hAL2Tc4-unsplash.jpg") no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-
-  &-title {
-    padding-top: 40px;
-    font-family: $Syne-bold;
-    font-size: 30px;
-  }
-
-  &-text {
-    font-size: 14px;
-    font-family: $Dmsans-reg;
-  }
-
-  .list {
-    a {
-      margin: 20px auto;
-    }
-  }
-
-  &-wrapper {
-    position: relative;
-    display: flex;
-    padding: 0 30px;
-    border-radius: 30px;
-    justify-content: space-between;
-    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.1);
-
-    .btn {
-      margin: 20px 0;
-      max-width: 100%;
-    }
-
-    .questions {
+    &-illustration{
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-content: stretch;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 2px solid #C4C4C470;
+      padding-left: 45px;
+
+      img{
+        max-height: 350px;
+      }
+      p{
+        margin-bottom: 30px;
+        text-align: left;
+      }
     }
   }
 }
@@ -1207,24 +1054,10 @@ svg {
   }
 }
 
-//............................................................................
-//....OOOOOOO.....FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRR....SSSSSSS.....
-//...OOOOOOOOOO...FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSS....
-//..OOOOOOOOOOOO..FFFFFFFFFF.FFFFFFFFFF.EEEEEEEEEEE.RRRRRRRRRRR..SSSSSSSSSS...
-//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS..SSSS...
-//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR...RRRRRSSSSS.........
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR..SSSSSSS......
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRRRRR...SSSSSSSSS...
-//.OOOO......OOOO.FFFFFFFFF..FFFFFFFFF..EEEEEEEEEE..RRRRRRRR........SSSSSSS...
-//.OOOOO....OOOOO.FFFF.......FFFF.......EEEE........RRRR.RRRR..........SSSSS..
-//..OOOOO..OOOOO..FFFF.......FFFF.......EEEE........RRRR..RRRR..SSSS....SSSS..
-//..OOOOOOOOOOOO..FFFF.......FFFF.......EEEEEEEEEEE.RRRR..RRRRR.SSSSSSSSSSSS..
-//...OOOOOOOOOO...FFFF.......FFFF.......EEEEEEEEEEE.RRRR...RRRRR.SSSSSSSSSS...
-//.....OOOOOO.....FFFF.......FFFF.......EEEEEEEEEEE.RRRR....RRRR..SSSSSSSS....
-//............................................................................
 .offers {
+  display: none;
   position: relative;
-  display: flex;
+  //display: flex;
   align-items: center;
 
   height: 100vh;
@@ -1245,7 +1078,7 @@ svg {
     height: 100%;
     border-radius: 30px;
     color: $text;
-    box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.5);
     z-index: 6;
     transition: 0.2s ease-in-out;
 
@@ -1316,7 +1149,7 @@ svg {
     }
 
     &-price {
-      font-family: $Dmsans-med;
+      font-family: $Roboto-med;
       font-size: 18px;
       padding: 10px 0;
       border-top: 3px solid $color-yellow;
@@ -1325,8 +1158,7 @@ svg {
     }
 
     &-title {
-      // font-family: 'Gardens';
-      font-family: $Syne-bold;
+      font-family: $Roboto-bold;
       line-height: 1.25;
       font-size: 30px;
       padding-bottom: 5px;
@@ -1338,7 +1170,7 @@ svg {
       padding-left: 30px;
       align-content: center;
       align-items: center;
-      font-family: $Dmsans-med;
+      font-family: $Roboto-med;
       padding-bottom: 5px;
 
       &::before {
@@ -1359,7 +1191,7 @@ svg {
       position: relative;
       align-content: center;
       align-items: center;
-      font-family: $Dmsans-med;
+      font-family: $Roboto-med;
       display: flex;
       vertical-align: middle;
       padding-bottom: 8px;
@@ -1420,8 +1252,7 @@ svg {
   display: inline-block;
   width: 46px;
   height: 26px;
-  margin: 0;
-  margin-right: 10px;
+  margin: 0 10px 0 0;
 }
 
 .switch input {
@@ -1452,7 +1283,6 @@ svg {
   transition: 0.3s;
 }
 
-w
 input:checked + .slider {
   background-color: $color-yellow;
 }
@@ -1474,23 +1304,9 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-//............................................................................
-//.FFFFFFFFFF...OOOOOOO.......OOOOOOO.....TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRR...
-//.FFFFFFFFFF..OOOOOOOOOO....OOOOOOOOOO...TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
-//.FFFFFFFFFF.OOOOOOOOOOOO..OOOOOOOOOOOO..TTTTTTTTTTTEEEEEEEEEEE.RRRRRRRRRRR..
-//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR...RRRR..
-//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR...RRRR..
-//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
-//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRRRRR..
-//.FFFFFFFFF.FOOO......OOOOOOOO......OOOO....TTTT....EEEEEEEEEE..RRRRRRRR.....
-//.FFFF......FOOOO....OOOOOOOOOO....OOOOO....TTTT....EEEE........RRRR.RRRR....
-//.FFFF.......OOOOO..OOOOO..OOOOO..OOOOO.....TTTT....EEEE........RRRR..RRRR...
-//.FFFF.......OOOOOOOOOOOO..OOOOOOOOOOOO.....TTTT....EEEEEEEEEEE.RRRR..RRRRR..
-//.FFFF........OOOOOOOOOO....OOOOOOOOOO......TTTT....EEEEEEEEEEE.RRRR...RRRR..
-//.FFFF..........OOOOOO........OOOOOO........TTTT....EEEEEEEEEEE.RRRR....RRR..
 .footer {
   padding-top: 100px;
-  font-family: $Dmsans-med;
+  font-family: $Roboto-med;
   align-items: center;
   position: relative;
   display: flex;
@@ -1552,6 +1368,9 @@ input:checked + .slider:before {
       a {
         color: $color-light;
         transition: 0.3s;
+        &:hover{
+          color: $color-yellow;
+        }
       }
     }
   }
@@ -1702,6 +1521,15 @@ body {
       font-family: $Roboto-med;
     }
   }
+}
+
+.black-fill{
+}
+.black-stroke{
+}
+
+.activation{
+  fill: #000000 !important;
 }
 
 @import "media";
