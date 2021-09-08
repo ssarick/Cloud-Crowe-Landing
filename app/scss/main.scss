@@ -868,6 +868,7 @@ span.first-in {
     }
   }
 }
+
 .provided {
   text-align: center;
   justify-content: space-between;
@@ -910,32 +911,13 @@ span.first-in {
       max-height: 50px;
     }
 
-    &:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-      transition: 0.5s;
-
-      &:after {
-        filter: invert(74%) sepia(84%) saturate(1246%) hue-rotate(345deg) brightness(101%) contrast(102%);
-      }
-
-    }
-
     &:nth-child(1) {
       &:before {
-        content: 'ЭДО';
+        content: attr(aria-label);
       }
 
       &:after {
         content: url("../img/edo-ico.svg");
-      }
-
-      &:hover {
-        &:after {
-          filter: none;
-          content: url("../img/edo-ico-2.svg");
-
-        }
       }
 
     }
@@ -943,7 +925,8 @@ span.first-in {
     &:nth-child(2) {
 
       &:before {
-        content: 'Банк';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -952,9 +935,9 @@ span.first-in {
     }
 
     &:nth-child(3) {
-
       &:before {
-        content: 'Склад';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -965,7 +948,8 @@ span.first-in {
     &:nth-child(4) {
 
       &:before {
-        content: 'Кадры';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -977,7 +961,8 @@ span.first-in {
     &:nth-child(5) {
 
       &:before {
-        content: 'Учёт';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -988,7 +973,8 @@ span.first-in {
     &:nth-child(6) {
 
       &:before {
-        content: 'Статистика';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -997,27 +983,20 @@ span.first-in {
     }
 
     &:nth-child(7) {
-
       &:before {
-        content: 'Налоги';
+        content: attr(aria-label);
       }
 
       &:after {
         content: url("../img/soliq-ico.svg");
-      }
-
-      &:hover {
-        &:after {
-          filter: none;
-          content: url("../img/soliq-ico-2.svg");
-        }
       }
     }
 
     &:nth-child(8) {
 
       &:before {
-        content: '1С Интеграция';
+        content: attr(aria-label);
+
         font-size: 16px;
       }
 
@@ -1029,7 +1008,8 @@ span.first-in {
     &:nth-child(9) {
 
       &:before {
-        content: 'МСФО';
+        content: attr(aria-label);
+
       }
 
       &:after {
@@ -1050,13 +1030,24 @@ span.first-in {
     img {
       max-height: 350px;
     }
+
     span {
       font-size: 14px;
       padding: 10px 50px;
     }
+
     p {
       text-align: left;
     }
+  }
+}
+
+.active-item {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
+  &:after {
+    filter: invert(74%) sepia(84%) saturate(1246%) hue-rotate(345deg) brightness(101%) contrast(102%);
   }
 }
 
@@ -1520,12 +1511,13 @@ input:checked + .slider:before {
   &-item {
     transition: 0.3s;
     padding-right: 18px;
+
     &:hover {
       transition: 0.3s;
       transform: scale(1.2);
     }
 
-    svg{
+    svg {
       max-width: 30px;
     }
   }
@@ -1590,6 +1582,7 @@ body {
         font-size: 70px;
         margin-bottom: 20px;
       }
+
       h2 {
         font-size: 42px;
         line-height: 63px;
@@ -1703,7 +1696,7 @@ body {
   linear-gradient(130.44deg, #FFFFFF 50.05%, rgba(255, 216, 77, 0) 116.54%);
   position: relative;
 
-  &:before{
+  &:before {
     position: absolute;
     z-index: 2;
     content: '';
@@ -1716,22 +1709,26 @@ body {
     background: radial-gradient(97.57% 210.75% at 25.3% -0.08%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
     backdrop-filter: blur(30px);
   }
-  .backCube{
+
+  .backCube {
     position: absolute;
     bottom: 50px;
     left: 50px;
   }
-  .backRound{
+
+  .backRound {
     position: absolute;
     bottom: 20%;
     right: -1000px;
   }
-  .backOval{
+
+  .backOval {
     position: absolute;
     bottom: 50%;
     left: -350px;
   }
-  .backSegment{
+
+  .backSegment {
     position: absolute;
     bottom: 0;
     left: -20%;
@@ -1761,50 +1758,62 @@ body {
 }
 
 
-.service-page{
-  .footer{
+.service-page {
+  .footer {
     z-index: 99;
     position: relative;
     padding-top: 0;
     background-color: #333333;
   }
+
   #parallax {
     position: relative;
     background-image: url("../img/service-item-back.png"), url(../img/service-blur-back.jpg);
   }
-  .service-types{
+
+  .service-types {
     padding: 50px 0;
     position: relative;
     z-index: 99;
-    &-desc{
+
+    &-desc {
       padding: 100px 0;
-      h3{
+
+      h3 {
         font-size: 25px;
         margin-bottom: 40px;
       }
     }
-    &-images{
+
+    &-images {
       margin: 0 auto;
-      img{
+
+      img {
         max-width: 350px;
       }
     }
-    .provided{
+
+    .provided {
       padding: 50px 0 0 0;
-      &-item{
+
+      &-item {
         width: 100px;
         height: 100px;
+
         img {
           max-width: 25px;
         }
-        &:after{
+
+        &:after {
           place-content: center;
         }
-        &:before{
+
+        &:before {
           content: '';
         }
       }
     }
   }
 }
+
 @import "media";

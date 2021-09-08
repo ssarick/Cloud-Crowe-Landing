@@ -136,29 +136,29 @@
         <div class="col-xl-8 forLang" id="burger">
             <div class="forOrderMob">
                 <ul class="list">
-                    <li class="list-btn"><a href="aboutus.html">About Us</a></li>
-                    <li class="list-btn"><a href="service.html">Service</a></li>
-                    <li class="list-btn"><a href="#weProvide">Pricing</a></li>
-                    <li class="list-btn"><a href="#contacts">Contacts</a></li>
+                    <li class="list-btn"><a href="./pages/aboutus.html">О Нас</a></li>
+                    <li class="list-btn"><a href="./pages/service.html">Сервисы</a></li>
+                    <li class="list-btn"><a href="#">Цены</a></li>
+                    <li class="list-btn"><a href="#contacts">Контакты</a></li>
                 </ul>
                 <div class="language" lang="ru">
                     <div class="language_main language_item">
-                        <img src="./img/flag-for-uk.png" alt="English"> English
+                        <img src="./img/flag-for-russia.png" alt="English"> Русский
                         <img class="icon-down" src="./img/chevron-down.svg" alt="" style="width: 20px;">
                     </div>
                     <div class="language_wrap">
                         <div class="language_other language_item">
-                            <a href="ru.html"><img src="./img/flag-for-russia.png" alt="English"> Русский</a>
+                            <a href="./pages/en.html"><img src="./img/flag-for-uk.png" alt="English">English</a>
                         </div>
                         <div class="language_other language_item">
-                            <a href="uz.html"><img src="./img/flag-for-uzb.png" alt="English">O'zbekcha</a>
+                            <a href="./pages/uz.html"><img src="./img/flag-for-uzb.png" alt="English">O'zbekcha</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col log-reg">
-                <a id="btn-reg" href="#" class="btn btn-white col">Registration</a>
-                <a id="btn-log" href="#" class="btn btn-white col">Login</a>
+                <a id="btn-reg" href="#" class="btn btn-white col">Регистрация</a>
+                <a id="btn-log" href="#" class="btn btn-white col">Войти</a>
             </div>
         </div>
     </div>
@@ -183,19 +183,19 @@
             </div>
         </div>
         <div class="container d-flex flex-column header-content">
-            <p class="tip wow fadeIn " data-wow-duration="4s" data-wow-delay="0.5s">Scroll Down</p>
+            <p class="tip wow fadeIn " data-wow-duration="4s" data-wow-delay="0.5s">Прокрутите вниз</p>
             <div class="mouse wow fadeIn blurred-back" data-wow-duration="4s" data-wow-delay="0.5s">
                 <span></span>
             </div>
         </div>
         <div class="container hashtags">
             <ul class="d-flex">
-                <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s"><span>#</span>Banking</li>
+                <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s"><span>#</span>Банкинг</li>
                 <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.5s">
-                    <span>#</span>Finance
+                    <span>#</span>Финансы
                 </li>
                 <li class="wow pulse" data-wow-iteration="100" data-wow-duration="2s" data-wow-delay="0.9s">
-                    <span>#</span>Accounting
+                    <span>#</span>Бухгалтерия
                 </li>
             </ul>
         </div>
@@ -615,7 +615,9 @@
                 <div class="col-lg-6">
                     <ul class="provided-list">
                         <li v-for="item in images"
-                            @mouseover="updateImg(item.src, item.text.ru, item.link)"
+                            :aria-label="item.name.ru"
+                            :id="item.id"
+                            @click="updateImg(item.src, item.text.ru, item.link.ru, item.id)"
                             class="provided-item"></li>
                     </ul>
                 </div>
@@ -707,24 +709,24 @@
                         </ul>
                     </div>
                     <div class="footer-text">
-                        © 2020 INVOICE EXPERT | All rights reserved.
+                        © 2020 INVOICE EXPERT | Все права защищены.
                     </div>
                 </div>
                 <div class="col-lg-3 footer-list">
                     <ul class="">
-                        <li class="footer-list-item"><a href="index.html">Home</a></li>
-                        <li class="footer-list-item"><a href="aboutus.html">About us</a></li>
-                        <li class="footer-list-item"><a href="service.html">Services</a></li>
-                        <li class="footer-list-item"><a href="#">Pricing</a></li>
-                        <li class="footer-list-item"><a href="#contacts">Contacts</a></li>
+                        <li class="footer-list-item"><a href="index.html">Главная</a></li>
+                        <li class="footer-list-item"><a href="./pages/aboutus.html">О Нас</a></li>
+                        <li class="footer-list-item"><a href="./pages/service.html">Сервисы</a></li>
+                        <li class="footer-list-item"><a href="#">Цены</a></li>
+                        <li class="footer-list-item"><a href="#contacts">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6 footer-adress">
                     <ul>
-                        <li class="footer-adress-col">Tashkent, Mirabad district,
-                            Afrosiab 4B.
+                        <li class="footer-adress-col">Ташкент, Мирабадский р-н,
+                            Афрасияб 4Б.
                             <br>
-                            Reference point: Metro Oybek
+                            Ориентир: Метро "Айбек"
                         </li>
                         <li class="footer-adress-col"><a href="tel:+998909259737">+998 90 925 97 37</a></li>
                         <li class="footer-adress-col"><a href="tel:+998977655770">+998 97 765 57 70</a></li>

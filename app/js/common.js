@@ -1,8 +1,7 @@
-$(function($){
+$(function ($) {
     'use strict';
     $(window).on('load', function () {
-        if ($(".pre-loader").length > 0)
-        {
+        if ($(".pre-loader").length > 0) {
             $(".pre-loader").fadeOut("slow");
         }
     });
@@ -75,14 +74,25 @@ var app = new Vue({
     el: '#app',
     data: {
         selected: {
+            id:'1',
             image: '../img/EDO-ill.svg',
-            desc: 'ЭДО - позволит вам легко и быстро обмениваться электронными документами',
-            link: 'service.html#edo'
+            desc: '',
+            link: ''
         },
         images: [
             {
                 src: ('../img/EDO-ill.svg'),
-                link: 'service.html#bank',
+                id:'1',
+                name: {
+                    ru:'ЭДО',
+                    en:'EDO',
+                    uz:'EDO',
+                },
+                link: {
+                    ru: './pages/service.html#edo',
+                    en: 'serviceEn.html#edo',
+                    uz: 'serviceUz.html#edo',
+                },
                 text: {
                     ru: 'ЭДО - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -91,7 +101,18 @@ var app = new Vue({
             },
             {
                 src: ('../img/bank-ill.svg'),
-                link: 'service.html#bank',
+                id:'2',
+
+                name: {
+                    ru:'Банк',
+                    en:'Bank',
+                    uz:'Bank',
+                },
+                link: {
+                    ru: './pages/service.html#bank',
+                    en: 'serviceEn.html#bank',
+                    uz: 'serviceUz.html#bank',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -99,8 +120,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'3',
                 src: ('../img/storage-ill.svg'),
-                link: 'service.html#storage',
+                name: {
+                    ru:'Cклад',
+                    en:'Storage',
+                    uz:'Storage',
+                },
+                link: {
+                    ru: './pages/service.html#storage',
+                    en: 'serviceEn.html#storage',
+                    uz: 'serviceUz.html#storage',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -108,8 +139,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'4',
                 src: ('../img/hr-ill.svg'),
-                link: 'service.html#hr',
+                name: {
+                    ru:'Кадры',
+                    en:'HR',
+                    uz:'HR',
+                },
+                link: {
+                    ru: './pages/service.html#hr',
+                    en: 'serviceEn.html#hr',
+                    uz: 'serviceUz.html#hr',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -117,8 +158,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'5',
                 src: ('../img/accounting-ill.svg'),
-                link: 'service.html#accounting',
+                name: {
+                    ru:'Бухгалтерия',
+                    en:'Accounting',
+                    uz:'Buxgalteriya',
+                },
+                link: {
+                    ru: './pages/service.html#accounting',
+                    en: 'serviceEn.html#accounting',
+                    uz: 'serviceUz.html#accounting',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -126,8 +177,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'6',
                 src: ('../img/statistics-ill.svg'),
-                link: 'service.html#statistics',
+                name: {
+                    ru:'Статистика',
+                    en:'Statistics',
+                    uz:'Statistika',
+                },
+                link: {
+                    ru: './pages/service.html#statistics',
+                    en: 'serviceEn.html#statistics',
+                    uz: 'serviceUz.html#statistics',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -135,8 +196,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'7',
                 src: ('../img/soliq-ill.svg'),
-                link: 'service.html#soliq',
+                name: {
+                    ru:'Налоги',
+                    en:'Taxes',
+                    uz:'Soliq',
+                },
+                link: {
+                    ru: './pages/service.html#soliq',
+                    en: 'serviceEn.html#soliq',
+                    uz: 'serviceUz.html#soliq',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -144,8 +215,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'8',
                 src: ('../img/1c-ill.svg'),
-                link: 'service.html#1c',
+                name: {
+                    ru:'1C Интеграция',
+                    en:'1C Integration',
+                    uz:'1С Integratsiya',
+                },
+                link: {
+                    ru: './pages/service.html#1c',
+                    en: 'serviceEn.html#1c',
+                    uz: 'serviceUz.html#1c',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -153,8 +234,18 @@ var app = new Vue({
                 }
             },
             {
+                id:'9',
                 src: ('../img/msfo-ill.svg'),
-                link: 'service.html#msfo',
+                name: {
+                    ru:'МСФО',
+                    en:'MSFO',
+                    uz:'MSFO',
+                },
+                link: {
+                    ru: './pages/service.html#msfo',
+                    en: 'serviceEn.html#msfo',
+                    uz: 'serviceUz.html#msfo',
+                },
                 text: {
                     ru: 'Банк - позволит вам легко и быстро обмениваться электронными документами',
                     en: 'hey',
@@ -164,11 +255,14 @@ var app = new Vue({
         ],
     },
     methods: {
-      updateImg: function (src, text, link) {
-        this.selected.image = src
-        this.selected.desc = text
-          this.selected.link = link
-      }
+        updateImg: function (src, text, link, id) {
+            let active = document.getElementById(id);
+            active.classList.toggle("active-item");
+            this.selected.id = id
+            this.selected.image = src
+            this.selected.desc = text
+            this.selected.link = link
+        }
     }
 })
 
